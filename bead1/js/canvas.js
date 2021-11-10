@@ -24,7 +24,20 @@ class Renderer {
     this.ctx = ctx;
   }
 
+  renderPlayer(player) {
+    ctx.beginPath();
+    let x = asUnit(player.x) + (player.xl == 1 ? Canvas.path*2 : Canvas.path);
+    let y = asUnit(player.y) + (player.xl == 1 ? Canvas.path*2 : Canvas.path);
+    this.ctx.strokeStyle = player.color;
+    this.ctx.fillStyle = player.color;
+    this.ctx.rect( x,y,15,15);
+    this.ctx.fill();
+    this.ctx.stroke();
+
+  }
+
   render(node) {
+    if (!node) throw 'cannot render node=null';
     this.renderCell(node);
     this.renderDoors(node);
   }
@@ -36,6 +49,8 @@ class Renderer {
 
   renderDoors(node) {
     ctx.beginPath();
+    this.ctx.strokeStyle = node.traced ? '#444' : '#666';
+    this.ctx.fillStyle = node.traced ? '#444' : '#666';
     const [x, y] = [asUnit(node.x), asUnit(node.y)];
     this.ctx.rect(x + Canvas.pad, y + Canvas.pad, Canvas.path, Canvas.path)
     if (node.isDoorOpen("NORTH")) {
@@ -50,10 +65,10 @@ class Renderer {
     if (node.isDoorOpen("WEST")) {
       this.ctx.rect(x + Canvas.u2, y + Canvas.pad, Canvas.u2, Canvas.path);
     }
+
     this.ctx.stroke();
     this.ctx.fill();
 
   }
 }
 
-const r = new Renderer(ctx);

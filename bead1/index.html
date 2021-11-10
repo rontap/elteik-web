@@ -18,26 +18,68 @@
 
 <body>
 
-<!-- Add your site or application content here -->
-<p>Hello world! This is HTML5 Boilerplate.</p>
+<div id="toolbar">
+  <span id="title">Labyrinth</span>
+  <span id="playerspace">
 
-
+  </span>
+</div>
 
 <div>
+  <br/><br/><br/><br/><br/><br/>
   <canvas id="canv"></canvas>
 </div>
 <style>
-  #canv{
-    width:400px;
-    height: 400px;
-    border:1px solid blue;
+  #canv {
+    width: 800px;
+    height: 800px;
+    border: 1px solid blue;
     margin: 20px;
   }
-</style>
 
-<script src="js/main.js"></script>
+  * {
+    font-family: 'Bahnschrift', cursive;
+  }
+
+  #title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-top: -6px;
+  display: inline-block;
+  }
+
+  #toolbar {
+    padding: 20px;
+    height: 20px;
+
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: #ccc;
+    border-bottom: 14px solid #999;
+  }
+
+  .player {
+    display: inline-block;
+    border-bottom: 14px solid red;
+    width: 115px;
+    height: 60px;
+  }
+
+  #playerspace {
+    float: right;
+    margin-top: -20px;
+    margin-right: -20px;
+  }
+</style>
+<script src="js/Shape.js"></script>
+<script src="js/Player.js"></script>
 <script src="js/canvas.js"></script>
-<script src="js/Node.js"></script>
+<script src="js/main.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
 </body>
 
 </html>
