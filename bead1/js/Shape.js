@@ -9,7 +9,7 @@ class Shape {
     EAST: 1,
     SOUTH: 2,
     WEST: 3,
-    RANDOM: ()=> ["NORTH","EAST","SOUTH","WEST"][Math.floor(Math.random()*3)]
+    RANDOM: () => ["NORTH", "EAST", "SOUTH", "WEST"][Math.floor(Math.random() * 3)]
   }
 
 
@@ -29,8 +29,20 @@ class Shape {
     if (undef(this.getRotation)) throw 'Invalid Shape::Rotation';
   }
 
-  setPos(x,y) {
-    this.pos = {x,y};
+  setPos(x, y) {
+    this.pos = {x, y};
+
+    if (this.treasure) {
+      this.treasure.coords = this.pos;
+    }
+    return this;
+  }
+
+  asOdd(to) {
+    this.odd = to;
+    if (this.treasure) {
+      this.treasure.odd = to;
+    }
     return this;
   }
 
@@ -53,7 +65,6 @@ class Shape {
   isDoorOpen(doorName) {
     return this.doors[Shape.Dir[doorName]] === '1';
   }
-
 
 
 }
