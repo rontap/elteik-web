@@ -30,4 +30,8 @@ class TreasureStash {
   get y() {
     return this.coords.y;
   }
+
+  get raw() {
+    return this.coords;
+  }
 }

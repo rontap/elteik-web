@@ -1,31 +1,34 @@
 const Canvas = {
   unit: 75,//px
   path: 20,
-  soff: .75
+  soff: .75,
+  origin: [0, 0]
 };
 Canvas.u2 = Canvas.unit / 2;
 Canvas.pad = Canvas.u2 - Canvas.path / 2;
 Canvas.uSoff = Canvas.unit * Canvas.soff;
 
-function asUnit(coord) {
-  return (coord + Canvas.soff) * Canvas.unit;
-};
-
-function asUnitRect(pos) {
-  return [
-    (pos.x + Canvas.soff) * Canvas.unit,
-    (pos.y + Canvas.soff) * Canvas.unit,
-    Canvas.unit,
-    Canvas.unit,
-  ]
-}
 
 class Renderer {
-  constructor(ctx, game) {
+  constructor(ctx, game, ignoreCoords = false) {
+    this.odd = ignoreCoords;
     this.ctx = ctx;
     this.game = game;
 
     ctx.canvas.addEventListener("click", this.traceClick.bind(this));
+  }
+
+  asUnit(coord) {
+    return (coord + Canvas.soff) * Canvas.unit;
+  };
+
+  asUnitRect(pos) {
+    return [
+      (pos.x + Canvas.soff) * Canvas.unit,
+      (pos.y + Canvas.soff) * Canvas.unit,
+      Canvas.unit,
+      Canvas.unit,
+    ]
   }
 
   clear() {
@@ -34,37 +37,126 @@ class Renderer {
     this.ctx.clearRect(0, 0, 1500, 1500);
     this.ctx.beginPath();
     this.ctx.lineWidth = 1;
+    this.ctx.strokeStyle = 'black';
+    this.ctx.fillStyle = 'black';
   }
 
-  renderPlayer(player) {
+  renderPlayer(player,opacity='ff') {
     console.log(player);
     ctx.beginPath();
-    let x = asUnit(player.x) + (player.xl == 1 ? Canvas.path * 2 : Canvas.path);
-    let y = asUnit(player.y) + (player.xl == 1 ? Canvas.path * 2 : Canvas.path);
-    this.ctx.strokeStyle = player.color;
-    this.ctx.fillStyle = player.color;
+    let x = this.asUnit(player.x) + (player.xl === 1 ? Canvas.path * 2 : Canvas.path);
+    let y = this.asUnit(player.y) + (player.yl === 1 ? Canvas.path * 2 : Canvas.path);
+    this.ctx.strokeStyle = player.color+opacity;
+    this.ctx.fillStyle = player.color+opacity;
     this.ctx.lineWidth = 3;
     this.ctx.rect(x, y, 15, 15);
     this.ctx.fill();
     this.ctx.stroke();
   }
 
-  renderTreasure(player, {x, y}, treasure) {
-    if (treasure.odd) return;
 
-    ctx.beginPath();
-    let xx = asUnit(x) + (Canvas.u2);
-    let yy = asUnit(y) + (Canvas.u2);
+  renderTreasure(color, {x, y}, treasure) {
+    if (!this.odd && treasure.odd) return;
+
+    this.ctx.beginPath();
+    let xx = this.odd ? Canvas.u2 : this.asUnit(x) + (Canvas.u2);
+    let yy = this.odd ? Canvas.u2 : this.asUnit(y) + (Canvas.u2);
     this.ctx.strokeStyle = 'white';
-    this.ctx.fillStyle = player.color;
-    this.ctx.arc(xx, yy, 8, 0, 2 * Math.PI);
-    this.ctx.fill();
+    this.ctx.fillStyle = color;
+    this.ctx.arc(xx, yy, 7, 0, 2 * Math.PI);
     this.ctx.stroke();
+    this.ctx.fill();
   }
+
+  animateMove(x,y,traceback,player,cb ){
+    let to = 0;
+    traceback.reverse();
+    let int = setInterval( function() {
+      if (to++ > traceback.length+3) {
+        clearInterval(int);
+        cb(x,y);
+        return;
+      }
+
+      for (let i = 0 ; i < to ; i++) {
+        if (i >= traceback.length) continue;
+        player.data.x = traceback[i].x;
+        player.data.y = traceback[i].y;
+        renderer.renderPlayer(player.data,44);
+      }
+
+    }, 90);
+
+  }
+
+
+  animateSlide(id, direction, node, cb) {
+    let img;
+    let dx = 0;
+    let dy = 0;
+    let [ogx, ogy, dimx, dimy] = [-Canvas.uSoff, Canvas.unit * id + Canvas.uSoff, Canvas.unit * 9, Canvas.unit]
+    if (direction === "LEFT") {
+      dx = -1
+    } else if (direction === "RIGHT") {
+      dx = 1
+    } else {
+      [ogx, ogy, dimx, dimy] = [ogy, ogx, dimy, dimx];
+      dy = direction === "UP" ? -1 : 1;
+    }
+
+    img = this.ctx.getImageData(ogx, ogy, dimx, dimy);
+    let dist = 0;
+    const int = setInterval(function (that) {
+      ogx += dx;
+      ogy += dy;
+      this.ctx.putImageData(img, ogx, ogy);
+
+      switch (direction) {
+        case "UP" :
+          node.pos.x = id;
+          break;
+        case "DOWN" :
+          node.pos.x = id;
+          break;
+        case "LEFT" :
+          node.pos.x = 7;
+          break;
+        case "RIGHT" :
+          node.pos.x = -1;
+          break;
+      }
+      switch (direction) {
+        case "UP" :
+          node.pos.y = 7;
+          break;
+        case "DOWN" :
+          node.pos.y = -1;
+          break;
+        case "LEFT" :
+          node.pos.y = id;
+          break;
+        case "RIGHT" :
+          node.pos.y = id;
+          break;
+      }
+      node.pos.x += (dist / Canvas.unit) * dx;
+      node.pos.y += (dist / Canvas.unit) * dy;
+      that.render(node)
+
+
+      if (dist++ > Canvas.unit - 1) {
+        clearTimeout(int);
+        cb(id, direction);
+      }
+    }, 8, this)
+
+
+  }
+
 
   renderBtns() {
 
-    this.ctx.fillStyle = '#6b93e8';
+    this.ctx.fillStyle = '#b0bec5';
     this.ctx.strokeStyle = "black";
     this.ctx.fillRect(0, 0, 1000, 1000);
 
@@ -96,13 +188,13 @@ class Renderer {
   }
 
   renderCell(node) {
-    this.ctx.rect(...asUnitRect(node.pos))
+    this.ctx.rect(...this.asUnitRect(node.pos))
     this.ctx.stroke();
   }
 
   renderDoors(node) {
     ctx.beginPath();
-    const [x, y] = [asUnit(node.x), asUnit(node.y)];
+    const [x, y] = this.odd ? Canvas.origin : [this.asUnit(node.x), this.asUnit(node.y)];
 
     this.ctx.fillStyle = "#3b3b3b";
     this.ctx.fillRect(x, y, Canvas.unit, Canvas.unit);
@@ -127,6 +219,7 @@ class Renderer {
     this.ctx.fill();
 
   }
+
   getColor(node) {
     if (node.traced) {
       if (this.nextShift) return '#ffc9af';
@@ -142,6 +235,9 @@ class Renderer {
     const y = Math.floor((evt.offsetY - Canvas.uSoff) / Canvas.unit);
 
     if (clamp(x) !== x || clamp(y) !== y) {
+      let {dx, dy} = this.counterLastMove();
+      if (dx === x && dy === y) return;
+
       this.maybeLastMove = this.lastMove;
       this.lastMove = {x, y};
 
@@ -154,6 +250,15 @@ class Renderer {
     } else {
       this.game.step(x, y);
     }
+  }
 
+  counterLastMove() {
+    if (!this.lastMove) return {};
+    const dx = this.lastMove.x;
+    const dy = this.lastMove.y;
+    if (dy === -1) return {dx, dy: 7}
+    if (dy === 7) return {dx, dy: -1}
+    if (dx === -1) return {dx: 7, dy}
+    if (dx === 7) return {dx: -1, dy}
   }
 }

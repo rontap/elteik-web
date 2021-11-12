@@ -12,6 +12,12 @@ class Shape {
     RANDOM: () => ["NORTH", "EAST", "SOUTH", "WEST"][Math.floor(Math.random() * 3)]
   }
 
+  get raw() {
+    return {...this};
+  }
+  static fromRaw({type,rotation,pos}) {
+    return new Shape(type,rotation,pos);
+  }
 
   /**
    *
