@@ -2,17 +2,14 @@
 <html class="no-js" lang="">
 
 <head>
+  <title>Dungeons & Tresures</title>
   <meta charset="utf-8">
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="apple-touch-icon" href="icon.png">
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
   <meta name="theme-color" content="#fafafa">
-
   <script src="js/util.js"></script>
 </head>
 
@@ -41,9 +38,7 @@
 </div>
 
 <div>
-
   <canvas id="canv" class="no"></canvas>
-
 </div>
 
 <div id="mainScreen">
@@ -67,10 +62,12 @@
       <br/>
       <button large onclick="beginGame()">New Game</button>
       <div id="saved">
-      <br/>OR<br/><br/>
-      <button large onclick="load()">Load Saved Game</button>
+        <br/>OR<br/><br/>
+        <button large onclick="load()">Load Saved Game</button>
       </div>
-      <br/><br/><hr/><br/>
+      <br/><br/>
+      <hr/>
+      <br/>
       <button large onclick="showHelp()">Game Rules</button>
       <br/><br/>
       Created by: Aron Tatai // rontap // G07ZOE // v1.0
@@ -79,210 +76,69 @@
   </div>
 </div>
 <div id="descriptionRules" class="no">
-  <button onclick="hideHelp()">Go Back to main screen</button><br/>
+  <button onclick="hideHelp()">Go Back to main screen</button>
+  <br/>
   <h2>Game Rules (Hungarian)</h2>
   <h3>A játék célja</h3>
   <p>
-    Nekeresdországban Nevenincs királynak egyik szeme sír, a másik nevet. Nevet, mert tündérszép lányának kérője akadt, és sír, mert a kiváló kérőből nem egy, hanem több is van. Hát most hogyan döntse el, melyiknek adja lánya kezét és fele királyságát? Gondolja kikéri udvari tanácsosa, Furfang véleményét. Az udvari tanácsos nevéhez illő ötlettel áll elő: állítsák próba elé a kérőket, s aki a legrátermettebbnek bizonyul, az nyerje el a szépséges királylány kezét. Van a várnak egy elvarázsolt katakombája, ahol a szobák helye folyamatosan változtatható. Ebben rejtenek el kincseket, s az a kérő nyeri el a királylány kezét, aki a leghamarabb szedi össze a rábízott kincseket.
+    Nekeresdországban Nevenincs királynak egyik szeme sír, a másik nevet. Nevet, mert tündérszép lányának kérője akadt,
+    és sír, mert a kiváló kérőből nem egy, hanem több is van. Hát most hogyan döntse el, melyiknek adja lánya kezét és
+    fele királyságát? Gondolja kikéri udvari tanácsosa, Furfang véleményét. Az udvari tanácsos nevéhez illő ötlettel áll
+    elő: állítsák próba elé a kérőket, s aki a legrátermettebbnek bizonyul, az nyerje el a szépséges királylány kezét.
+    Van a várnak egy elvarázsolt katakombája, ahol a szobák helye folyamatosan változtatható. Ebben rejtenek el
+    kincseket, s az a kérő nyeri el a királylány kezét, aki a leghamarabb szedi össze a rábízott kincseket.
   </p>
   <p>
-    A <b>labirintus szobáit</b> egy 7x7-es négyzetrács cellái jelképezik. Minden szoba esetén adott, hogy mely falain van ajtó. Ha két szomszédos szoba érintkező falán egy-egy ajtó van, akkor át lehet menni egyik szobából a másikba. A négyzetrács páros sorait és oszlopait el lehet tolni, a többi szoba végig rögzített a játék során. Az eltolásokkal az ajtókon keresztül utak nyílnak a szobák között, így lehet eljutni a kincsekhez. Mindegyik kérő arra törekszik, hogy a katakomba szobáinak ötletes eltolásával eljusson a kincsekhez. Aki elsőként találja meg mindahányat és kiindulópontjára sikeresen visszaérkezik az a nyertes.
+    A <b>labirintus szobáit</b> egy 7x7-es négyzetrács cellái jelképezik. Minden szoba esetén adott, hogy mely falain
+    van ajtó. Ha két szomszédos szoba érintkező falán egy-egy ajtó van, akkor át lehet menni egyik szobából a másikba. A
+    négyzetrács páros sorait és oszlopait el lehet tolni, a többi szoba végig rögzített a játék során. Az eltolásokkal
+    az ajtókon keresztül utak nyílnak a szobák között, így lehet eljutni a kincsekhez. Mindegyik kérő arra törekszik,
+    hogy a katakomba szobáinak ötletes eltolásával eljusson a kincsekhez. Aki elsőként találja meg mindahányat és
+    kiindulópontjára sikeresen visszaérkezik az a nyertes.
   </p>
   <p>
-    A <b>játék során minden játékosnak</b> a kincsei közül azt kell megszereznie, amit az aktuálisan legfelső, mindenki által látható kincskártya mutat (ezt a játékos színével megegyező kör jelzi!). Arra a mezőre kell eljutni. Ahhoz, hogy a célt elérje, a játékosnak
+    A <b>játék során minden játékosnak</b> a kincsei közül azt kell megszereznie, amit az aktuálisan legfelső, mindenki
+    által látható kincskártya mutat (ezt a játékos színével megegyező kör jelzi!). Arra a mezőre kell eljutni. Ahhoz,
+    hogy a célt elérje, a játékosnak
   </p>
 
   <h3>Lépések a játék során</h3>
-    <li>először a katakombát kell átalakítania a kimaradt szoba becsúsztatásával, és</li>
-    <li>lépnie mindig csak ez után szabad a figurájával.</li>
+  <li>először a katakombát kell átalakítania a kimaradt szoba becsúsztatásával, és</li>
+  <li>lépnie mindig csak ez után szabad a figurájával.</li>
 
   <p>
-    A <b>labirintus átalakítása</b> a következőképpen történik: A játékos a kimaradt szobát (tetszőlegesen elforgatva) valamelyik oldalról becsúsztathatja a játéktábla területére egy szabadon mozgó sor vagy oszlop szélén, aminek következtében az átellenes oldalon kiesik egy másik szoba. A tábla szélén nyilak jelzik azokat a helyeket, ahol a szobát be lehet csúsztatni. A szoba bárhol betolható, kivétel ott, ahol az imént kilökődött. Nem szabad tehát az előző játékos lépését rögtön „visszacsinálni". Ha a szobák eltolása során a szobával együtt egy figura is kitolódnék – akár másé, akár a miénk -, akkor ezt a figurát az ellenkező oldalról imént becsúsztatott szobába kell helyezni.
+    A <b>labirintus átalakítása</b> a következőképpen történik: A játékos a kimaradt szobát (tetszőlegesen elforgatva)
+    valamelyik oldalról becsúsztathatja a játéktábla területére egy szabadon mozgó sor vagy oszlop szélén, aminek
+    következtében az átellenes oldalon kiesik egy másik szoba. A tábla szélén nyilak jelzik azokat a helyeket, ahol a
+    szobát be lehet csúsztatni. A szoba bárhol betolható, kivétel ott, ahol az imént kilökődött. Nem szabad tehát az
+    előző játékos lépését rögtön „visszacsinálni". Ha a szobák eltolása során a szobával együtt egy figura is kitolódnék
+    – akár másé, akár a miénk -, akkor ezt a figurát az ellenkező oldalról imént becsúsztatott szobába kell helyezni.
   </p>
   <p>
-    A <b>szobák eltolását követi a játékos lépése a figurával.</b> A katakomba minden olyan pontjáig el lehet jutni, amelyet a kiindulóponttal folyamatos járatvonal köt össze. Az ilyen járatokban tehát olyan messzire mehetünk el, amilyen messzire csak akarunk, vagyis nem számít, hogy hány szobán lépkedünk végig. Nem kötelező lépni. Figuránkat akár ott is hagyhatjuk, ahol éppen van. Egy mezőn több figura is állhat: a figurák nem ütik ki egymást. Ha valaki nem tud rögtön céljáig eljutni, akkor figurájával addig a pontig célszerű elmennie, ahol feltehetőleg jó helyzetben várhatja következő lépést. Ha valaki elérte a felfedett kincskártya által megjelölt célt, akkor felfedi a következőt, és most ehhez a célhoz igyekszik eljutni, stb.
+    A <b>szobák eltolását követi a játékos lépése a figurával.</b> A katakomba minden olyan pontjáig el lehet jutni,
+    amelyet a kiindulóponttal folyamatos járatvonal köt össze. Az ilyen járatokban tehát olyan messzire mehetünk el,
+    amilyen messzire csak akarunk, vagyis nem számít, hogy hány szobán lépkedünk végig. Nem kötelező lépni. Figuránkat
+    akár ott is hagyhatjuk, ahol éppen van. Egy mezőn több figura is állhat: a figurák nem ütik ki egymást. Ha valaki
+    nem tud rögtön céljáig eljutni, akkor figurájával addig a pontig célszerű elmennie, ahol feltehetőleg jó helyzetben
+    várhatja következő lépést. Ha valaki elérte a felfedett kincskártya által megjelölt célt, akkor felfedi a
+    következőt, és most ehhez a célhoz igyekszik eljutni, stb.
   </p>
   <p>
-    A <b>játék akkor ér véget</b>, ha egy játékos az összes kincskártyájához tartozó kincset megszerezte, és visszavezette a figuráját arra mezőre, ahonnan elindult. Az a győztes, aki valamennyi kincsét megtalálta és figuráját elsőként juttatta vissza a kiindulópontra.
+    A <b>játék akkor ér véget</b>, ha egy játékos az összes kincskártyájához tartozó kincset megszerezte, és
+    visszavezette a figuráját arra mezőre, ahonnan elindult. Az a győztes, aki valamennyi kincsét megtalálta és
+    figuráját elsőként juttatta vissza a kiindulópontra.
   </p>
 
 </div>
 
-<style>
-  body {
-    height: 100%;
-    background: #fefefe;
-  }
-
-  .no {
-    display: none !important;
-  }
-  #descriptionRules {
-    text-align: left;
-    background:#eee !important;
-    max-height: 600px;
-    overflow: auto;
-
-  }
-
-  #mainScreen, #descriptionRules {
-    max-width: 600px;
-    display: block;
-    margin: 140px auto 0 auto;
-    background: #e0e0e0;
-    z-index: 99;
-    min-height: 450px;
-    padding: 30px;
-    padding-top: 10px;
-    border-radius: 4px;
-    border-bottom: 6px solid #9e9e9e;
-  }
-  hr {
-    border:none;
-    height:1px;
-    background:#666;
-    margin:10px 30px;
-  }
-
-  #canv {
-    width: 800px;
-    height: 800px;
-    border-radius: 6px;
-    overflow: hidden;
-    border-bottom: 4px solid #546e7a;
-    margin: 20px;
-    position: absolute;
-    left: 40px;
-    top: 130px;
-  }
-
-  * {
-    font-family: 'Bahnschrift', cursive;
-  }
-
-  #title {
-    font-size: 32px;
-    font-weight: 900;
-    margin-top: -1px;
-    display: inline-block;
-  }
-
-  #control {
-    margin-left: 20px;
-  }
-
-  #toolbar {
-    padding: 20px;
-    height: 30px;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    background: #b0bec5;
-    border-bottom: 14px solid #607d8b;
-  }
-
-  .player {
-    display: inline-block;
-    border-bottom: 14px solid red;
-    width: 150px;
-    padding: 10px;
-    height: 50px;
-    z-index: 10;
-  }
-
-
-  .player::before {
-    position: absolute;
-    content: 'X';
-    margin-top: 74px;
-    background: #666;
-    color: white;
-    padding: 5px;
-    width: 160px;
-    margin-left: -10px;
-    border-radius: 0 0 4px 4px;
-    opacity: 0;
-  }
-
-  .player.active.MOVE::before {
-    content: 'CURRENT - MOVE';
-    animation: zsa .4s forwards;
-  }
-
-  .player.active.SHIFT::before {
-    content: 'CURRENT - SHIFT';
-    animation: zsa .4s forwards;
-
-  }
-
-  @keyframes zsa {
-    0% {
-      opacity: 0;
-      max-height: 0
-    }
-    100% {
-      opacity: 1;
-      max-height: 40px
-    }
-  }
-
-  #playerspace {
-    float: right;
-    margin-top: -20px;
-    margin-right: -20px;
-  }
-
-  #canvOdd {
-    background: #ccc;
-  }
-
-  #odd {
-    position: fixed;
-    right: 0px;
-    padding: 20px;
-    padding-bottom: 20px;
-    top: 84px;
-    background: #b0bec5;
-    width: 300px;
-    z-index: 0;
-  }
-
-
-  button, .btnlike {
-    background: #ef5350;
-    border-radius: 4px;
-    border: none;
-    border-bottom: 4px solid #c62828;
-    padding: 8px 12px;
-    min-width: 100px;
-    cursor: pointer;
-    color: white;
-    margin: 3px;
-    margin-left: 0px;
-
-
-  }
-
-  button[large] {
-    padding: 10px 14px;
-    min-width: 200px;
-  }
-
-  button:active, .btnlike:active, .btnlike:focus {
-    border-top: 4px solid #ff9999;
-    border-bottom-width: 0px;
-    vertical-align: -4px;
-  }
-</style>
 <script src="js/Shape.js"></script>
-
 <script src="js/TreasureStash.js"></script>
 <script src="js/Player.js"></script>
 
 <script src="js/canvas.js"></script>
-<script src="js/game.js"></script>
+<script src="js/Game.js"></script>
 <script src="js/main.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
