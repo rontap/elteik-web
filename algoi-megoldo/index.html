@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>algo_1_solver</title>
+    <script src="index.js" charset="utf-8"></script>
+    <script src="radix.js" charset="utf-8"></script>
+    <script src="hash.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="c">
+
+      <code>
+        <h1>Algo1 Helper</h1><hr/>
+
+          <h2>Common</h2>
+          use <b>log()</b> to enable logging. Override the VERBOSE function for custom logging.
+
+          <hr/>
+          <h2>Trees</h2> found in index.js<br/>
+          class Node : static helper class for Nodes<br/>
+          class Tree : wrapper class for Trees. usage:
+          <ul>
+            let a = Tree.new(5);    // this will construct a tree with root node 5<br/>
+            a.root.addLeft(2);      // adds a node to the left of the root<br/>
+            a.root.left.addLeft(4); // adds a left node to the left node of the root. etc<br/>
+            a.level_order() / inorder() / postorder() / preorder(); // tree orderings<br/>
+            a.print();              // visually prints out the tree here<br/>
+            <b>{{getters}}</b><br/>
+            left, right, height     //  gets respecive values of tree                       
+          </ul>
+
+          <hr/>
+          <h2>SearchTree extends Tree</h2>
+          cadding Search tree functionality
+          <ul>
+            min() // returns minimum value in tree <br/>
+            remMin() // removes the minimum value and returns it<br/ >
+            delRoot() // remvoes root node <br/ >
+          </ul>
+          <hr/>
+          <h2>PrQueue</h2>
+          Max Heap / Priority Queue with array representation [L1 null front elem]
+          <ul>
+            let a = new PrQueue([2,3,4,5]);<br/>
+            a.add(6); // adds value to Prq<br/>
+            a.rem_max() // removes the current max elem;<br/>
+            a.heap_sort() // sorts the Heap. ( uses a.build_max_heap() )<br/>
+          </ul>
+          <hr/>
+          <h2>Hash Tables</h2>
+          found in hash.js<br/>
+          <ul>
+            let h = new HashTable( k=>k%11 , 15) // normal hash table with 8 length and hashing fv<br/>
+            let hq = new QHashTable( k=>k%8 , 15, 1/2, 1/2) // quadratic hash table<br/>
+            let hd = new DHashTable( k=>k%11 , 15, k=> (1+k%10) ) // double hash table<br/>
+            <br/>
+            h.fill([2,3,4,56]) //fill elements. Works for all HashTables<br/>
+            h.insert(2); //inserts single element<br/>
+            h.delete(2);   //deletes element and prints out path if logging is set<br/>
+            h.search(2);   //is same as h.delete(2,false)
+          </ul>
+
+          <hr/>
+          <h2>Radix Search</h2>
+          found in radix.js<br/>
+          <hr/>
+          <ul>
+            radix_sort( list: array[], digits: int, r (buckets): int );
+            //will do a full radix sort<br/>
+            counting_sort( list: array[], r) //idk what this does anymore :shrug:
+          </ul>
+          Credits: ATP
+        </code>
+    </div>
+    
+  </body>
+  <style>
+    code {
+      line-height: 1.7;
+      padding:20px;
+      display:block;
+      max-height:600px;
+      overflow:scroll;
+    }
+      #c {
+        position:fixed;
+        left:0; right:0;
+        top:20px;
+        bottom:20px;
+        border:5px solid gray;
+      }
+      #c span {
+
+        width:60px;
+        display:inline-block;
+        padding:5px;
+        margin:10px 5px;
+        text-align:center;
+      }
+      i[left]:not(:empty)>div>span {
+        display:inline-block;
+        border: 2px solid red;
+      }
+      i[right]:not(:empty)>div>span {
+         display:inline-block;
+         border: 2px solid blue;
+       }
+      #c div {
+        text-align:center;
+        display:inline-block;
+        padding:2px;
+        border:2px solid #999;
+      }
+      #c i[right]>div { text-align:right; }
+      #c i[left]>div { text-align:left; }
+      #c div div { border-color: #666; }
+      #c div div div { border-color: #555; }
+      #c div div div div { border-color: #444; }
+      #c div div div div div{ border-color: #333; }
+      #c div:hover { background:#22222233;   }
+  </style>
+</html>
