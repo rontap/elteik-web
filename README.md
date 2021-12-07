@@ -20,7 +20,7 @@ be('good') || be('ELTE')
 [Custom Website *100%*](https://rontap.github.io/elteik-web/webfejlesztes-weboldal/index.html)
 
 ### Algorithms and Data Structures 
-[Algo I. Solver (rough version)](https://rontap.github.io/elteik-web/algo-megoldo/index.html)
+[Algo I. Solver (rough version)](https://rontap.github.io/elteik-web/algoi-megoldo/index.html)
 
 
 #### All code has licence of CC-BY-SA 
