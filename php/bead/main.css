@@ -1,0 +1,24 @@
+body {
+    background:#eee;
+    margin:20px;
+}
+nav {
+    padding-left:20px;
+    margin-bottom: 40px;
+}
+.c {
+    margin:0 auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 4px solid #999;
+}
+.c.info {
+    border-color:#48f;
+}
+.c.error {
+    border-color:#f44;
+}
+.e {
+    color:#c22;
+    margin-left:5px;
+}
