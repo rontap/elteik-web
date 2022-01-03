@@ -20,6 +20,7 @@
 
           $_SESSION["un"] = $myun;
           $_SESSION["is_admin"] =  $myun === "admin" && $mypw === "admin";
+          header("Location: index.php");
 
       } else if (count($errors) == 0 ){
          $errors['invalid'] = 'Invalid Username or Password!<br/>';
@@ -31,6 +32,12 @@
 <?php if ($_GET['fromreg']): ?>
     <div class="c info">
         Successful registration. You may now log in.
+    </div>
+    <br/>
+<?php endif; ?>
+<?php if ($_GET['fromlogout']): ?>
+    <div class="c info">
+        Successfully logged out.
     </div>
     <br/>
 <?php endif; ?>
@@ -57,7 +64,10 @@
     </label>
     <br/><br/>
     <input type="hidden" value="1" name="act"/>
-    <input type="submit" value="Login" name="sm"/>
-</form>
+    <input type="submit" value="Login" name="sm" class="btn btn-primary"/>
+</form><br/>
+<div class="c">
+    If you dont have an account, you can <a href="reg.php">create one for free</a>
+</div>
 
 

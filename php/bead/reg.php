@@ -72,7 +72,7 @@ if ($_GET["act"] == 1) {
     </label>
     <br/><br/>
     <input type="hidden" value="1" name="act"/>
-    <input type="submit" value="Register" name="sm"/>
+    <input type="submit" value="Register" name="sm" class="btn btn-primary"/>
 </form>
 
 

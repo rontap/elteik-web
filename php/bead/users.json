@@ -25,7 +25,12 @@
     },
     "admin": {
         "email": "admin@elstadion.hu",
-        "un" : "admin",
-        "pw" : "admin"
+        "un": "admin",
+        "pw": "admin"
+    },
+    "kecske": {
+        "email": "kecs@te.ac",
+        "un": "kecske",
+        "pw": "a"
     }
 }
