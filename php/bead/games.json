@@ -22,16 +22,16 @@
     },
     {
         "home_team": "honved",
-        "home_score": 0,
+        "home_score": "1",
         "away_team": "afcw",
-        "away_score": 0,
+        "away_score": "4",
         "date": "2021-11-19"
     },
     {
         "home_team": "afcw",
-        "home_score": 3,
+        "home_score": "3",
         "away_team": "honved",
-        "away_score": 2,
+        "away_score": "2",
         "date": "2021-12-11"
     },
     {
@@ -42,17 +42,17 @@
         "date": "2021-12-31"
     },
     {
-        "home_team": "fcb",
+        "home_team": "ujp",
         "home_score": -1,
-        "away_team": "ujp",
+        "away_team": "fcb",
         "away_score": -1,
         "date": "2022-12-22"
     },
     {
         "home_team": "honved",
-        "home_score": "0",
+        "home_score": "-1",
         "away_team": "ujp",
-        "away_score": "3",
+        "away_score": "-1",
         "date": "2023-11-11"
     },
     {
@@ -63,9 +63,9 @@
         "date": "2023-11-11"
     },
     {
-        "home_team": "fradi",
+        "home_team": "afcw",
         "home_score": "-1",
-        "away_team": "afcw",
+        "away_team": "fradi",
         "away_score": "-1",
         "date": "2023-11-19"
     }

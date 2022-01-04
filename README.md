@@ -12,9 +12,9 @@ be('good') || be('ELTE')
 ### Web Programming
 [JS Handin 2021 (Labyrinth)](https://rontap.github.io/elteik-web/js/bead1/index.html)
 
-[JS Class ZH 1](https://rontap.github.io/elteik-web/js/bigzh1/???)
+[JS Class ZH 1](https://rontap.github.io/elteik-web/js/bigzh1/index.html)
 
-[JS Small ZH 1](https://rontap.github.io/elteik-web/js/zh1/???) 
+[JS Small ZH 1](https://rontap.github.io/elteik-web/js/zh1/index.html) 
 
 ### Web Development
 [Custom Website *100%*](https://rontap.github.io/elteik-web/webfejlesztes-weboldal/index.html)
