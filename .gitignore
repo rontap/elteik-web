@@ -1,2 +1,16 @@
 *.zip
 .idea
+__SCRAP/bead1-dto/.editorconfig
+__SCRAP/bead1-dto/bead1.iml
+__SCRAP/bead1-dto/css/main.css
+__SCRAP/bead1-dto/css/normalize.css
+__SCRAP/bead1-dto/favicon.ico
+__SCRAP/bead1-dto/icon.png
+__SCRAP/bead1-dto/index.html
+__SCRAP/bead1-dto/js/canvas.js
+__SCRAP/bead1-dto/js/main.js
+__SCRAP/bead1-dto/js/Player.js
+__SCRAP/bead1-dto/js/Shape.js
+__SCRAP/bead1-dto/js/util.js
+__SCRAP/bead1-dto/package-lock.json
+__SCRAP/bead1-dto/package.json
