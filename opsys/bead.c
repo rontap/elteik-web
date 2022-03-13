@@ -14,19 +14,24 @@ int main(void) {
     size_t len = 0;
     ssize_t read;
 
-    fp = fopen("./dbf", "r");
+    fp = fopen("./dbf", "rw+");
     if (fp == NULL)
         exit(EXIT_FAILURE);
 
     while ((read = getline(&line, &len, fp)) != -1) {
-        printf("Retrieved line of length %zu:\n", read);
-        printf("%s", line);
+        //printf("Retrieved line of length %zu:\n", read);
+        //printf("!!<%s> <%zu>!!\n" , line, len);
     }
 
+
+   // add_user(fp);
+    menu(fp);
     fclose(fp);
+    return 0;
+
     if (line) { free(line); };
 
-    menu();
+
 
 
     exit(EXIT_SUCCESS);
