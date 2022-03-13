@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,7 +9,7 @@ int read_option() {
     printf("\n>> enter number: ");
     do {
         choice = getc(stdin);
-    } while (choice < 48 || choice > 57);
+    } while (choice < 48 || choice > 57); // must choose between 0-9
     getc(stdin);
     return choice - 48;
 }
@@ -72,9 +71,10 @@ void list_region(int should_list, FILE *fp) {
             printf("name : %s", line);
             printf("town : ");
             print_region(line_ti);
-            printf("\ngames: %s\n", line_nth);
+            printf("\ngames: %s", line_nth);
         }
     }
+    printf("\n[_] List done.\n");
 }
 
 void add_user(FILE *fp) {
@@ -84,29 +84,56 @@ void add_user(FILE *fp) {
 
     printf(">> Full name: ");
     fgets(name, MAX_LINE + 1, stdin);
-    printf("\n>> How many times did you participate already?: ");
+    printf(">> How many times did you participate already?: ");
     fgets(nth_reg, 10, stdin);
 
     int nth_regi = atoi(nth_reg);
     int reg = select_region();
 
-    printf("!!<%s><%i><%i>!!", name, reg, nth_regi);
     fprintf(fp, "%s%i\n%i\n", name, reg, nth_regi);
     free(name);
-    printf("\n[+] User added");
+    printf("\n[+] User added\n");
 }
 
-void delete_user() {
 
-}
+void edit_user(FILE *fp, int edit_as_well) {
+    fp = fopen("./dbf", "rw+");
+    char name[MAX_LINE];
+    FILE *fp_cp;
+    char str[MAX_LINE];
+    fp_cp = fopen("./dbf_temp", "w");
 
-void edit_user() {
+    printf(">> Username you want to change/delete: ");
+    fgets(name, MAX_LINE + 1, stdin);
+    int hook = 0;
+    while (!feof(fp)) {
 
+        fgets(str, MAX_LINE, fp);
+        if (!feof(fp)) {
+            if (strcmp(str, name)) {
+                hook--;
+                if (hook < 0) {
+                    fprintf(fp_cp, "%s", str);
+                }
+            } else {
+                hook = 2;
+                if (edit_as_well) {
+                    printf(">> Enter new Details:\n");
+                    add_user(fp_cp);
+                }
+            }
+        }
+    }
+    fclose(fp);
+    fclose(fp_cp);
+    remove("./dbf");
+    rename("./dbf_temp", "./dbf");
+    printf("[~] Done changing participant.\n");
 }
 
 
 int menu(FILE *fp) {
-    printf("\n==== Húsvéti Locsolókirály ====");
+    printf("\n==== Húsvéti Locsolókirály 1.0 ====");
     printf("\nSelect Action:");
     printf("\n1 - Sign up");
     printf("\n2 - Edit participant");
@@ -114,12 +141,18 @@ int menu(FILE *fp) {
     printf("\n4 - List everyone");
     printf("\n5 - List a region");
     printf("\n0 - Exit");
+
     switch (read_option()) {
         case 0 :
             return 0;
         case 1 :
-
             add_user(fp);
+            break;
+        case 2 :
+            edit_user(fp, 1);
+            break;
+        case 3 :
+            edit_user(fp, 0);
             break;
         case 4 :
             list_region(0, fp);
@@ -131,5 +164,7 @@ int menu(FILE *fp) {
             return 0;
 
     }
+
+    return -1;
 };
 
