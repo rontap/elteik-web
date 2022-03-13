@@ -10,7 +10,7 @@ void handler(int signumber){
 }
 
 int main(){
-
+so
   struct sigaction sigact;
   sigact.sa_handler=handler; //SIG_DFL,SIG_IGN
   sigemptyset(&sigact.sa_mask); //during execution of handler these signals will be blocked plus the signal    
