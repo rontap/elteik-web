@@ -12,7 +12,7 @@
 int main(void) {
     FILE *fp;
 
-
+    printf("\n==== Húsvéti Locsolókirály 1.0 ====");
     fp = fopen("./dbf", "rw+");
     if (fp == NULL) {
         exit(EXIT_FAILURE);

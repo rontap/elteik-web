@@ -90,6 +90,9 @@ void add_user(FILE *fp) {
     int nth_regi = atoi(nth_reg);
     int reg = select_region();
 
+    // jump to end of file
+    while (getc(fp) != EOF) {};
+
     fprintf(fp, "%s%i\n%i\n", name, reg, nth_regi);
     free(name);
     printf("\n[+] User added\n");
@@ -110,30 +113,33 @@ void edit_user(FILE *fp, int edit_as_well) {
 
         fgets(str, MAX_LINE, fp);
         if (!feof(fp)) {
-            if (strcmp(str, name)) {
-                hook--;
+            hook--;
+            if (strcmp(str, name) != 0) {
                 if (hook < 0) {
                     fprintf(fp_cp, "%s", str);
                 }
             } else {
                 hook = 2;
                 if (edit_as_well) {
-                    printf(">> Enter new Details:\n");
+                    printf(">> Enter new Details ===\n");
                     add_user(fp_cp);
                 }
             }
         }
-    }
+    }; // while
     fclose(fp);
     fclose(fp_cp);
     remove("./dbf");
     rename("./dbf_temp", "./dbf");
-    printf("[~] Done changing participant.\n");
+    if (edit_as_well) {
+        printf("[~] Done changing participant.\n");
+    } else {
+        printf("[×] Done removing participant.\n");
+    }
 }
 
 
 int menu(FILE *fp) {
-    printf("\n==== Húsvéti Locsolókirály 1.0 ====");
     printf("\nSelect Action:");
     printf("\n1 - Sign up");
     printf("\n2 - Edit participant");
@@ -162,9 +168,7 @@ int menu(FILE *fp) {
             break;
         default :
             return 0;
-
     }
-
-    return -1;
+    printf("\n====");
+    return 1;
 };
-
