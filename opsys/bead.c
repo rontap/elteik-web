@@ -2,7 +2,6 @@
 // Author: atatai || G07ZOE || opsys bead 1.
 // ---------
 
-#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,5 +22,4 @@ int main(void) {
 
     exit(EXIT_SUCCESS);
 
-}
-
+} // int main;

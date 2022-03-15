@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LINE 100
+#define MAX_LINE   (100)
+#define DATA_SIZE  (3)      // how many lines each data is
+#define INT_READL  (10)     // when reading int; line length
 
 int read_option() {
     int choice;
-    printf("\n>> enter number: ");
+    printf("\n>> Enter number: ");
     do {
         choice = getc(stdin);
     } while (choice < 48 || choice > 57); // must choose between 0-9
@@ -80,12 +82,12 @@ void list_region(int should_list, FILE *fp) {
 void add_user(FILE *fp) {
     char *name;
     name = (char *) malloc(MAX_LINE + 1);
-    char nth_reg[10];
+    char nth_reg[INT_READL];
 
     printf(">> Full name: ");
     fgets(name, MAX_LINE + 1, stdin);
     printf(">> How many times did you participate already?: ");
-    fgets(nth_reg, 10, stdin);
+    fgets(nth_reg, INT_READL + 1, stdin);
 
     int nth_regi = atoi(nth_reg);
     int reg = select_region();
@@ -110,7 +112,6 @@ void edit_user(FILE *fp, int edit_as_well) {
     fgets(name, MAX_LINE + 1, stdin);
     int hook = 0;
     while (!feof(fp)) {
-
         fgets(str, MAX_LINE, fp);
         if (!feof(fp)) {
             hook--;
@@ -119,7 +120,7 @@ void edit_user(FILE *fp, int edit_as_well) {
                     fprintf(fp_cp, "%s", str);
                 }
             } else {
-                hook = 2;
+                hook = DATA_SIZE - 1;
                 if (edit_as_well) {
                     printf(">> Enter new Details ===\n");
                     add_user(fp_cp);
