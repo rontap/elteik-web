@@ -1,6 +1,6 @@
-# elteik-web
+# elte-ik
 
-Stuff I had to do while doing ELTE IK Web development
+Stuff I had to do while doing ELTE IK
 
 ```javascript
 be('good') || be('ELTE')

@@ -2,7 +2,6 @@
 // Author: atatai || G07ZOE || opsys bead 1.
 // ---------
 
-#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +11,7 @@
 int main(void) {
     FILE *fp;
 
-
+    printf("\n==== Húsvéti Locsolókirály 1.0 ====");
     fp = fopen("./dbf", "rw+");
     if (fp == NULL) {
         exit(EXIT_FAILURE);
@@ -23,5 +22,5 @@ int main(void) {
 
     exit(EXIT_SUCCESS);
 
-}
+} // int main;
 
