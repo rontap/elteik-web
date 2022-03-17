@@ -14,11 +14,19 @@ be('good') || be('ELTE')
 
 All projects have achieved maximum points \
 
-[JS Handin 2021 (Labyrinth)](https://rontap.github.io/elteik-web/js/bead1/index.html)
+[JS Handin 2021 (Labyrinth)](https://rontap.github.io/elteik-web/js/bead1/index.html)  Max points
 
 [JS Class ZH 1](https://rontap.github.io/elteik-web/js/bigzh1/index.html)
 
 [JS Small ZH 1](https://rontap.github.io/elteik-web/js/zh1/index.html)
+
+[PHP ZH 1](https://rontap.github.io/elteik-web/php/zh/README.md)  Max points
+
+[PHP Handin 2022](https://rontap.github.io/elteik-web/php/bead/readme.md) 
+
+### C++ Header
+
+See path `/cpp/setops.h`
 
 ### Web Development
 
