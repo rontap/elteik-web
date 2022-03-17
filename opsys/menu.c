@@ -60,10 +60,9 @@ void list_region(int should_list, FILE *fp) {
     size_t len_t = 0;
     char *line_nth = NULL;
     size_t len_nth = 0;
-    ssize_t read;
 
     fseek(fp, 0, SEEK_SET);
-    while ((read = getline(&line, &len, fp)) != -1) {
+    while ((getline(&line, &len, fp)) != -1) {
         getline(&line_t, &len_t, fp);
         getline(&line_nth, &len_nth, fp);
 
