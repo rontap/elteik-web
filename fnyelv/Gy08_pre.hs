@@ -43,7 +43,7 @@ char c = () <$ satisfy (==c)
 
 -- olvassunk egy konkrét String-et
 string :: String -> Parser ()   -- String ~ [Char]
-string s = undefined
+string s = mapM_ char s
 
 
 instance Alternative Parser where
@@ -80,32 +80,33 @@ optional_ pa = () <$ optional pa
 
 -- (foo|bar)*kutya?
 p0 :: Parser ()
-p0 = undefined
+p0 = many_ (string "foo" <|> string "bar") >> string "kuty" >> optional_ (char 'a')
 
 -- \[foo(, foo)*\]         -- nemüres ,-vel választott foo lista
 p1 :: Parser ()
-p1 = undefined
+p1 = string "[foo" >> many_ (string ", foo") >> char ']' >> eof
 
 -- (ac|bd)+
 p2 :: Parser ()
-p2 = undefined
+p2 = some_ (string "ac" <|> string "bd")
 
 inList :: [Char] -> Parser Char
-inList str = undefined
+inList str = satisfy (`elem` str)
 
 inList_ :: [Char] -> Parser ()
-inList_ str = undefined
+inList_ str = () <$ inList str
 
 -- std függvény:
 choice :: [Parser a] -> Parser a
 choice ps = undefined
 
 lowercase :: Parser ()
-lowercase = undefined
+lowercase =  () <$ satisfy (isLower)
 
 -- [a..z]+@foobar\.(com|org|hu)
+-- [a-z]+@foobar\.(com|org|hu)
 p3 :: Parser ()
-p3 = undefined
+p3 = some lowercase >> char '@' >> string "foobar." >> (string "com" <|> string "org" <|> string "hu")
 
 -- -?[0..9]+           -- a -? opcionális '-'-t jelent
 p4 :: Parser ()
