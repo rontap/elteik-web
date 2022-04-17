@@ -140,21 +140,55 @@ void edit_user(FILE *fp, int edit_as_well) {
     }
 }
 
-void competition(FILE *fp) {
-    printf("\n=== Starting Competition >>>>");
 
-    int pipe_parent_to_1[2];
-    int pipe_parent_to_2[2];
-    int pipe_from_1[2];
-    int pipe_from_2[2];
+void competition(FILE *fp) {
+    printf("\n=== Starting Competition >>>\n");
+
 
     if ((pipe(pipe_parent_to_1) == -1 ||
          pipe(pipe_parent_to_2) == -1 ||
          pipe(pipe_from_1) == -1 ||
          pipe(pipe_from_2) == -1)) {
-        perror("Cannot open pipe!!\n Exiting!");
+        perror("!!! Cannot open pipe\n Exiting!");
         exit(EXIT_FAILURE);
     }
+
+    struct sigaction sig_act;
+
+    sig_act.sa_sigaction = handler;
+    sigemptyset(&sig_act.sa_mask);
+
+    sig_act.sa_flags = SA_SIGINFO;
+    sigaction(SIGTERM, &sig_act, NULL);
+
+    int state = -1;
+    pid_t child = fork();
+
+    if (child < 0 ) {
+        perror(":fork !!! Fork Error");
+        exit(EXIT_FAILURE);
+    }
+
+    if (child > 0) {
+        pid_t child = fork();
+
+        if (child < 0 ) {
+            perror(":fork -> parent !!! Fork Error");
+            exit(EXIT_FAILURE);
+        }
+        if (child > 0 ) {
+            // :fork -> parent :fork -> parent
+            pipe_act_parent();
+        } else {
+            // :fork -> parent :fork -> child
+            pipe_act_child(1);
+        }
+    } else {
+        // :fork -> child
+        pipe_act_child(2);
+    }
+
+    printf("<< endcompetition");
 }
 
 int menu(FILE *fp) {
@@ -167,12 +201,6 @@ int menu(FILE *fp) {
     printf("\n6 - Start competition");
     printf("\n0 - Exit");
 
-    printf("%i\n", randint());
-    printf("%i\n", randint());
-    printf("%i\n", randint());
-    printf("%i\n", randint());
-    printf("%i\n", randint());
-    printf("%i\n", randint());
     switch (read_option()) {
         case 0 :
             return 0;
@@ -193,7 +221,7 @@ int menu(FILE *fp) {
             break;
         case 6 :
             competition(fp);
-            break;
+            return 0;
         default :
             return 0;
     }
