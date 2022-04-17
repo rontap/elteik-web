@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAX_LINE   (100)
-#define DATA_SIZE  (3)      // how many lines each data is
-#define INT_READL  (10)     // when reading int; line length
+#include "main.h"
+#include "pipe.c"
 
 int read_option() {
     int choice;
@@ -24,6 +22,7 @@ int select_region() {
     printf("\n4 - Kígyós-patak");
     printf("\n5 - Páskom");
     printf("\n6 - Káposztás kert");
+    printf("\n7 - Malom telek");
     return read_option();
 }
 
@@ -46,6 +45,9 @@ void print_region(int region_int) {
             return;
         case 6:
             printf("Káposztás kert");
+            return;
+        case 7:
+            printf("Malom telek");
             return;
     }
     return;
@@ -138,6 +140,22 @@ void edit_user(FILE *fp, int edit_as_well) {
     }
 }
 
+void competition(FILE *fp) {
+    printf("\n=== Starting Competition >>>>");
+
+    int pipe_parent_to_1[2];
+    int pipe_parent_to_2[2];
+    int pipe_from_1[2];
+    int pipe_from_2[2];
+
+    if ((pipe(pipe_parent_to_1) == -1 ||
+         pipe(pipe_parent_to_2) == -1 ||
+         pipe(pipe_from_1) == -1 ||
+         pipe(pipe_from_2) == -1)) {
+        perror("Cannot open pipe!!\n Exiting!");
+        exit(EXIT_FAILURE);
+    }
+}
 
 int menu(FILE *fp) {
     printf("\nSelect Action:");
@@ -146,25 +164,35 @@ int menu(FILE *fp) {
     printf("\n3 - Delete participant");
     printf("\n4 - List everyone");
     printf("\n5 - List a region");
+    printf("\n6 - Start competition");
     printf("\n0 - Exit");
 
+    printf("%i\n", randint());
+    printf("%i\n", randint());
+    printf("%i\n", randint());
+    printf("%i\n", randint());
+    printf("%i\n", randint());
+    printf("%i\n", randint());
     switch (read_option()) {
         case 0 :
             return 0;
         case 1 :
             add_user(fp);
-            break;
+            return 0;
         case 2 :
             edit_user(fp, 1);
-            break;
+            return 0;
         case 3 :
             edit_user(fp, 0);
-            break;
+            return 0;
         case 4 :
             list_region(0, fp);
             break;
         case 5 :
             list_region(1, fp);
+            break;
+        case 6 :
+            competition(fp);
             break;
         default :
             return 0;
