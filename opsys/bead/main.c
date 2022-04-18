@@ -96,7 +96,7 @@ void list_region(int should_list, int should_choose_interact , FILE *fp, int str
 
         }
     }
-    printf("\n[_] List done.\n");
+    if (VERBOSE) printf("\n[_] List done.\n");
 }
 
 void add_user(FILE *fp) {

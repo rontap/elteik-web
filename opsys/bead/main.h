@@ -16,7 +16,7 @@
 #define MSG_OUT_SIZE      (50)
 #define MSG_IN_SIZE     (4000)
 #define SIZEOF_MSG_IN (sizeof(char)*MSG_IN_SIZE)
-#define VERBOSE (1)
+#define VERBOSE (0)
 
 int randint() {
     return rand() / (RAND_MAX / MAX_SCORE + 1);
