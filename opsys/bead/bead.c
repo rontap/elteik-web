@@ -26,7 +26,7 @@ int main(void) {
         fclose(fp);
     }
 
-    printf("\n==== Exiting. Bye.\n");
+    //printf("\n==== Exiting. Bye.\n");
 
     exit(EXIT_SUCCESS);
 

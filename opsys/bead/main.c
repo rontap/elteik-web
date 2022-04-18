@@ -53,8 +53,17 @@ void print_region(int region_int) {
     return;
 };
 
-void list_region(int should_list, FILE *fp) {
-    int reg = should_list ? select_region() : 0;
+
+/**
+ *
+ * @param should_list
+ * @param should_choose_interact
+ * @param fp
+ * @param str_len
+ * @param str_out
+ */
+void list_region(int should_list, int should_choose_interact , FILE *fp, int str_len, char *str_out) {
+    int reg = should_list ? ( should_choose_interact ? should_choose_interact : select_region()) : 0;
 
     char *line = NULL;
     size_t len = 0;
@@ -70,11 +79,21 @@ void list_region(int should_list, FILE *fp) {
 
         int line_ti = atoi(line_t);
         if (reg == 0 || line_ti == reg) {
-            printf("-----\n");
-            printf("name : %s", line);
-            printf("town : ");
-            print_region(line_ti);
-            printf("\ngames: %s", line_nth);
+            if (str_len == 0) {
+                // printing
+                printf("-----\n");
+                printf("name : %s", line);
+                printf("town : ");
+                print_region(line_ti);
+                printf("\ngames: %s", line_nth);
+            } else {
+                //just gathering
+                if (VERBOSE) printf(">> Gathered : %s , town %i , games %s", line, line_ti, line_nth);
+                strcat(str_out, line);
+                strcat(str_out, line_t);
+                strcat(str_out, line_nth);
+            }
+
         }
     }
     printf("\n[_] List done.\n");
@@ -161,10 +180,11 @@ void competition(FILE *fp) {
     sig_act.sa_flags = SA_SIGINFO;
     sigaction(SIGTERM, &sig_act, NULL);
 
+
     int state = -1;
     pid_t child = fork();
 
-    if (child < 0 ) {
+    if (child < 0) {
         perror(":fork !!! Fork Error");
         exit(EXIT_FAILURE);
     }
@@ -172,23 +192,27 @@ void competition(FILE *fp) {
     if (child > 0) {
         pid_t child = fork();
 
-        if (child < 0 ) {
+        if (child < 0) {
             perror(":fork -> parent !!! Fork Error");
             exit(EXIT_FAILURE);
         }
-        if (child > 0 ) {
+        if (child > 0) {
             // :fork -> parent :fork -> parent
-            pipe_act_parent();
+            pipe_act_parent(fp);
+            state = 0;
         } else {
             // :fork -> parent :fork -> child
-            pipe_act_child(1);
+            pipe_act_child(1, fp);
+            state = 1;
         }
     } else {
         // :fork -> child
-        pipe_act_child(2);
+        sleep(1);
+        pipe_act_child(2, fp);
+        state = 2;
     }
 
-    printf("<< endcompetition");
+    printf("<< @%i << endcompetition\n",state);
 }
 
 int menu(FILE *fp) {
@@ -214,13 +238,16 @@ int menu(FILE *fp) {
             edit_user(fp, 0);
             return 0;
         case 4 :
-            list_region(0, fp);
+            list_region(0, 0, fp, 0, 0);
             break;
         case 5 :
-            list_region(1, fp);
+            list_region(1, 0, fp, 0, 0);
             break;
         case 6 :
             competition(fp);
+            return 0;
+        case 9 :
+            list_region(1,0, fp, 1, 0);
             return 0;
         default :
             return 0;
