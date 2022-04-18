@@ -20,8 +20,7 @@ int pipe_from_1[2];
 int pipe_from_2[2];
 
 void handler(int signumber, siginfo_t *info, void *_) {
-    printf("[handler] Signal with number %i has arrived\n", signumber);
-    printf("info\n");
+    printf("[handler] Signal with number %i has arrived", signumber);
 }
 
 /**
@@ -63,9 +62,51 @@ void pipe_child_event(char *msg) {
     free(msg_origin);
 
 }
+
 void pipe_eval_winner(char *msg) {
     if (VERBOSE) printf("@@ EVAL WINNER\n");
-}
+
+    char name[MAX_LINE] = {"No winner"};
+    int score = -1;
+
+    char potential_name[MAX_LINE];
+    int potential_score;
+
+    int delim = 0;
+    char *curLine = msg;
+
+    // re-processing string
+    while (curLine) {
+        char *nextLine = strchr(curLine, '\n');
+        if (nextLine) *nextLine = '\0';
+
+        if (VERBOSE) printf("processing curLine=[%s]\n", curLine);
+
+        // if current line is empty, we do not process it
+        if (strcmp(curLine, "") != 0) {
+            delim++;
+            // we have reached the 'number of times participated' section
+            if (delim % DATA_SIZE == 1) {
+                strcpy(potential_name, curLine);
+            } else if (delim % DATA_SIZE == 0) {
+                potential_score = atoi(curLine);
+                if (potential_score > score) {
+                    score = potential_score;
+                    strcpy(name, potential_name);
+                }
+            }
+        }
+
+        curLine = nextLine ? (nextLine + 1) : NULL;
+    }
+
+    printf("\n==== FINAL RESULTS ====\n\n");
+
+    printf("== Winner Name : %s\n", name);
+    printf("== Winner Score: %i\n", score);
+
+    printf("\n==== \n");
+};
 
 void pipe_act_parent(FILE *fp) {
     printf(">> : Parent Scope\n");
@@ -117,9 +158,8 @@ void pipe_act_parent(FILE *fp) {
     free(msg_in2);
     free(msg_out);
 
-    sleep(2);
 
-}
+} //pipe_act_parent
 
 void pipe_act_child(int child_no, FILE *fp) {
     printf("@%i : (( Child Scope\n", child_no);
@@ -133,7 +173,6 @@ void pipe_act_child(int child_no, FILE *fp) {
 
     kill(pppid, SIGTERM);
 
-    char msg_out[MSG_OUT_SIZE] = "";
     char *msg_in = (char *) malloc(SIZEOF_MSG_IN);
 
     if (child_no == 1) {
@@ -165,5 +204,5 @@ void pipe_act_child(int child_no, FILE *fp) {
     free(msg_in);
     printf("@%i : End Child Scope\n", child_no);
     exit(0);
-}
+} //pipe_act_child
 
