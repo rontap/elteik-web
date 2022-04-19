@@ -246,9 +246,6 @@ int menu(FILE *fp) {
         case 6 :
             competition(fp);
             return 0;
-        case 9 :
-            list_region(1,0, fp, 1, 0);
-            return 0;
         default :
             return 0;
     }
