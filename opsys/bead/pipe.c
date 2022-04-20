@@ -20,7 +20,7 @@ int pipe_from_1[2];
 int pipe_from_2[2];
 
 void handler(int signumber, siginfo_t *info, void *_) {
-    printf("[handler] Signal with number %i has arrived", signumber);
+    printf("[handler] Signal with number %i has arrived\n", signumber);
 }
 
 /**
