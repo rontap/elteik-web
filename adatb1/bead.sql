@@ -279,7 +279,7 @@ select * from konyvx;
 
 
 create or replace function inflalas return numeric is 
-    PRAGMA AUTONOMOUS_TRANSACTION;    
+    --PRAGMA AUTONOMOUS_TRANSACTION;    
        
     summ numeric := 0;
     cnt numeric := 0;
@@ -306,12 +306,21 @@ begin
    
     select count(isbn)  into res from konyv where ar > (av/cnt);
     
-    commit;
+    
+    --commit;
     return res;
 end;
 /
-select inflalas() from dual;
 
+declare 
+    o number;
+begin
+    o := inflalas();
+    dbms_output.put_line('Atlagnal nagyobbak: ' ||o);
+end;
+/
+
+/*
 insert into konyv values (
     'UK5647',
     'Pearson',
@@ -319,7 +328,9 @@ insert into konyv values (
     'Magna Charta',    100000000002
 );
 
-select * from konyv where ar > 1000;
+*/
+
+select * from konyv ;
 
 --- ==============================
 --- V.   {C} Feladat
@@ -351,3 +362,4 @@ insert into konyv values (
     'HP14UK',
     'Harry Potter V.',    9589
 );
+
