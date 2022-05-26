@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1606652617 source:c:\users\ronta\documents\elte\improgbead5\rle\main.c
+	<stdio.h>
+	<stdlib.h>
+	"rle.h"
+
+1606652429 c:\users\ronta\documents\elte\improgbead5\rle\rle.h
+
+1606652583 source:c:\users\ronta\documents\elte\improgbead5\rle\rle.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
