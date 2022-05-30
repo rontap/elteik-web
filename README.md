@@ -10,11 +10,11 @@ be('good') || be('ELTE')
 
 I take notes using MS OneNote for most Math subjects.
 
-[I. semester: Matalapok](https://rontap.github.io/elteik-web/jegyzet/jegyzet_matalapok.pdf) First 5 lectures missing
+[I. semester: Matalapok](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_matalapok.pdf) First 5 lectures missing
 
-[II. semester: Diszkrét Matek](https://rontap.github.io/elteik-web/jegyzet/jegyzet_dimat.pdf)
+[II. semester: Diszkrét Matek](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_dimat.pdf)
 
-[III. semester: Analízis II F](https://rontap.github.io/elteik-web/jegyzet/jegyzet_matalapok.pdf) C-szakirány
+[III. semester: Analízis II F](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_an2f.pdf) C-szakirány
 
 _Todo Add: Analízis I. , Numerikus Módszerek F, Számelmélet Alapjai I., Logika EA_
 
