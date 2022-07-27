@@ -16,6 +16,10 @@ I take notes using MS OneNote for most Math subjects.
 
 [III. semester: Analízis II F](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_an2f.pdf) C-szakirány
 
+[IV. semester: Logika EA]
+
+[IV. semester: Numerikus Módszerek F]
+
 _Todo Add: Analízis I. , Numerikus Módszerek F, Számelmélet Alapjai I., Logika EA_
 
 ---
@@ -42,7 +46,8 @@ All projects have achieved maximum points
 
 #### C++ Language (elective)
 
-See path `/cpp/setops.h`
+[Task description](https://github.com/rontap/elteik-web/blob/main/cpp/task.md)
+For solution, see `/cpp/setops.h`
 
 ### Web Development
 
