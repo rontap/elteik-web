@@ -8,7 +8,7 @@ be('good') || be('ELTE')
 
 ## Notes
 
-I take notes using MS OneNote for most Math subjects.
+I take notes using Samsung Notes (previously MS OneNote) for most Math and Logic subjects.
 
 [I. semester: Matalapok](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_matalapok.pdf) First 5 lectures missing
 
@@ -42,9 +42,17 @@ All projects have achieved maximum points
 
 [PHP Handin 2022](https://rontap.github.io/elteik-web/php/bead/readme.md) 
 
-### C and C++ 
+### Java (ProgTech F)
 
-#### C++ Language (elective)
+[Bead 1: Distance](https://rontap.github.io/elteik-web/java/ptech/bead1/readme.pdf)
+
+[Bead 2: Rubik 2D](https://rontap.github.io/elteik-web/java/Rubik2D/ProgTech_2.docx)
+Rubic's cube in 2D \
+
+[Bead 3: Snek](https://rontap.github.io/elteik-web/java/ptech/Snek/readme.docx) 
+Glorified Sneak game with primitive database connection \ 
+
+### C++ Language (elective)
 
 [Task description](https://github.com/rontap/elteik-web/blob/main/cpp/task.md)
 For solution, see `/cpp/setops.h`
@@ -71,6 +79,15 @@ TODO
 
 ---
 
+### Databases
+
+AB1 Handin: see path `/adatb1/bead.sql`
+
+## CV
+
+My personal CV can be found at TODO
+
+
 #### All code has licence of CC-BY-SA
 
-`Created by Aron Tatai || Neptun: G07ZOE || aron.tatai at gmail`
+`Created by Aron Tatai || Neptun: G07ZOE || contact : aron.tatai at gmail`
