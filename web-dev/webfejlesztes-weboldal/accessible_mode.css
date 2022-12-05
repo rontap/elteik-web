@@ -1,0 +1,44 @@
+body {
+  font-size:1.5em;
+  line-height: 1.5;
+  color:black;
+  background:white;
+}
+html , header{
+    background:white !important;
+}
+
+header a {
+  font-size:1.2em;
+}
+#jump_to_content {
+  top:-100px;
+}
+header {
+  top:-70px;
+}
+a:hover, a:focus, a:active {
+  background:white;
+  color:black;
+  box-shadow:0px 0px 5px black;
+  outline:3px;
+}
+a {
+  padding:5px;
+
+}
+input[type="submit"] {
+    width:100%;
+    padding:10px;
+}
+input {
+  font-size:1em;
+}
+header a {
+  min-width:150px;
+  text-align:center;
+}
+#jump_to_content:hover {
+  background:white;
+  color:black !important;
+}

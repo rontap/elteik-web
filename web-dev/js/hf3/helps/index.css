@@ -1,0 +1,27 @@
+@import url('https://cdn.jsdelivr.net/gh/elte-fi/www-assets@19.10.16/styles/mdss.min.css');
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center !important;
+}
+
+td.option {
+    width: 15px;
+}
+
+td.selected {
+    background-color: #517d81;
+    color: white;
+}
+
+span#guess, input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8em;
+}
+
+span#correct{
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #517d81;
+}

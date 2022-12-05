@@ -16,9 +16,11 @@ I take notes using Samsung Notes (previously MS OneNote) for most Math and Logic
 
 [III. semester: Analízis II F](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_an2f.pdf) C-szakirány
 
-[IV. semester: Logika EA]
+[IV. semester: Logika EA] 
 
 [IV. semester: Numerikus Módszerek F]
+
+[V. semester: Számelmélet Alapjai II. EA](https://github.com/rontap/elteik-web/blob/main/jegyzet/jegyzet_szamelmelet_alapjai_ii.pdf)
 
 _Todo Add: Analízis I. , Numerikus Módszerek F, Számelmélet Alapjai I., Logika EA_
 
@@ -32,15 +34,15 @@ My own [Personal Projects (since 2011)](https://rontap.github.io/rts-nxt/index.h
 
 All projects have achieved maximum points 
 
-[JS Handin 2021 (Labyrinth)](https://rontap.github.io/elteik-web/js/bead1/index.html) 
+[JS Handin 2021 (Labyrinth)](https://rontap.github.io/elteik-web/web-dev/js/bead1/index.html) 
 
-[JS Class ZH 1](https://rontap.github.io/elteik-web/js/bigzh1/index.html)
+[JS Class ZH 1](https://rontap.github.io/elteik-web/web-dev/js/bigzh1/index.html)
 
-[JS Small ZH 1](https://rontap.github.io/elteik-web/js/zh1/index.html)
+[JS Small ZH 1](https://rontap.github.io/elteik-web/web-dev/js/zh1/index.html)
 
-[PHP ZH 1](https://rontap.github.io/elteik-web/php/zh/README.md) 
+[PHP ZH 1](https://rontap.github.io/elteik-web/web-dev/php/zh/README.md) 
 
-[PHP Handin 2022](https://rontap.github.io/elteik-web/php/bead/readme.md) 
+[PHP Handin 2022](https://rontap.github.io/elteik-web/web-dev/php/bead/readme.md) 
 
 ### Java (ProgTech F)
 
@@ -59,7 +61,7 @@ For solution, see `/cpp/setops.h`
 
 ### Web Development
 
-[Custom Website *100%*](https://rontap.github.io/elteik-web/webfejlesztes-weboldal/index.html)
+[Custom Website *100%*](https://rontap.github.io/elteik-web/web-dev/webfejlesztes-weboldal/index.html)
 
 ### Solvers for Exams
 
@@ -71,11 +73,11 @@ For solution, see `/cpp/setops.h`
 
 #### Functional Programming - I. semester
 
-TODO
+See path for solutions `/haskell-fprog`
 
 #### Functional Languages - III. semester (elective)
 
-TODO
+See path for solutions `/haskell-fnyelv`
 
 ---
 

@@ -1,0 +1,28 @@
+:root {
+  --primary: #ff9800;
+  --primary-lighter:#ef6c00;
+}
+nav {
+  background: #eee;
+}
+html {
+    background:#111;
+    background-image:linear-gradient(#444,#111);
+    background-repeat:no-repeat;
+    color:#f1f1f1;
+}
+footer {
+  color:#ccc;
+}
+th {
+  background:black;
+}
+details>summary {
+  background:black;
+}
+header {
+  background:#444;
+}
+nav a:hover, nav a.active {
+      color:black !important;
+}
