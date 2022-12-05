@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Visszajelzés - Biciklizés Budapesten</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./main.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <h1>Visszajelzés</h1>
+      <nav>
+          <a id="jump_to_content" href="#content">Ugrás a Tartalomra</a>
+          <a href="./index.html">Kezdőlap</a>
+          <a href="./commute.html">Közlekedés</a>
+          <a href="./recreation.html">Sport</a>
+          <a class="active" href="./feedback.html">Visszajelzés</a>
+      </nav>
+    </header>
+
+    <section id="content">
+        <h2>Visszajelzés küldése</h2>
+        Kíváncsi vagyok a te véleményedre is! Mondd el, hogy mit gondolsz és Te hogyan szoktál Budapesten biciklizni!<br />
+        Előtte lehet érdemes átolvasni a <a href="./commute.html">belvárosi közlekedésről</a> és a  <a href="./recreation.html">kikapcsolódásról</a> szóló oldalt!
+    </section>
+
+    <section>
+        <h2>Visszajelzés Ürlap</h2>
+        <form
+            action="mailto:g07zoe@inf.elte.hu"
+            method="POST"
+            enctype="multipart/form-data"
+            name="feedback">
+
+            <label for="text">Neved (kötelező)</label>
+            <input type="text"  name="text"  required
+                    id="text" maxlength="128" placeholder="Péter Griffin"/>
+
+            <label for="feedback">Visszajelzés szövege
+              <textarea id="feedback" maxlength="2048" ></textarea>
+            </label>
+
+            <label>Milyen gyakran biciklizel a városban?</label>
+            <label>
+                <input  type="radio" value="gyakran (hetente)" name="bike"/>
+                gyakran (hetente)
+            </label>
+            <label>
+                <input  type="radio" value="ritkábban (havonta)" name="bike"/>
+                ritkábban (havonta)
+            </label>
+            <label>
+                <input  type="radio" value="szinte sose / sose" name="bike"/>
+                szinte sose / sose
+            </label>
+
+            <label>Milyen célokból szoktál biciklizni?</label>
+            <label>
+                <input type="checkbox" value="Munka / Egyetem" name="why"/>
+                Munka / Egyetem
+            </label>
+            <label>
+              <input type="checkbox" value="Kikapcsolódás" name="why"/>
+              Kikapcsolódás
+            </label>
+            <label>
+                <input type="checkbox" value="KRESZ Gyakorlása" name="why"/>
+                KRESZ Gyakorlása
+            </label>
+            <label>
+                <input type="checkbox" value="Egyéb" name="why"/>
+                Egyéb
+            </label>
+
+            <input type="submit" value="Visszajelzés küldése"/>
+            <input type="reset"  value="Ürlap törlése"/>
+        </form>
+    </section>
+
+    <div id="bg_image">
+        Köszönöm a visszelejzést!
+    </div>
+
+  </body>
+</html>

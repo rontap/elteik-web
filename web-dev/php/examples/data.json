@@ -1,0 +1,29 @@
+{
+    "150150150": {
+        "fullname": "Buda\u00f6rsi Koll\u00e9gista",
+        "taj": "150150150",
+        "email": "elte.kccsk@gmail.com",
+        "age": 21,
+        "gender": "f",
+        "regdate": "2020-09-01",
+        "notes": "Ideiglenesen hazak\u00f6lt\u00f6z\u00f6tt a j\u00e1rv\u00e1nyhelyzet miatt."
+    },
+    "176345555": {
+        "fullname": "Trap Pista",
+        "taj": "176345555",
+        "email": "tpista@inf.elte.hu",
+        "age": 27,
+        "gender": "m",
+        "regdate": "2021-04-27",
+        "notes": ""
+    },
+    "010101011": {
+        "fullname": "Dr. Programo Zolt\u00e1n",
+        "taj": "010101011",
+        "email": "pz@inf.elte.hu",
+        "age": 50,
+        "gender": "m",
+        "regdate": "1999-02-28",
+        "notes": ""
+    }
+}

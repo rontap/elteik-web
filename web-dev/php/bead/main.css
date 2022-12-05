@@ -1,0 +1,85 @@
+body {
+    background: #eee;
+    margin: 20px;
+}
+
+nav {
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.c {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 4px solid #999;
+    background: #fefefe;
+    color: #222;
+}
+.c-nomargin {
+    margin:0;
+    max-width: 500px;
+    padding: 20px;
+    border: 4px solid #999;
+    background: #fefefe;
+    color: #222;
+}
+
+.c.info {
+    border-color: #48f;
+}
+
+.c.error {
+    border-color: #f44;
+}
+
+.e {
+    color: #c22;
+    margin-left: 5px;
+}
+
+section {
+    display: block;
+    margin: 10px 40px;
+}
+
+table tr > * {
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+table th {
+    background: white;
+}
+
+tr.w {
+    background: #4caf50;
+}
+
+tr.d {
+    background:#ffc107;
+}
+
+tr.l {
+    background: #f44336;
+}
+#comment , #comment textarea{
+    width:100%;
+    display: block;
+}
+#comment textarea {
+    min-height: 50px;
+}
+
+.comment {
+    display: block;
+    margin:10px 0;
+    border:2px solid #ccc;
+    padding: 20px;
+    width:  400px;
+
+}
+.comment span {
+    color:#444;
+    font-size: 15px;
+}

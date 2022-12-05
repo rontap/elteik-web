@@ -1,0 +1,17 @@
+@import url('https://cdn.jsdelivr.net/gh/elte-fi/www-assets@19.10.16/styles/mdss.min.css');
+
+#error {
+    display: none;
+    background-color: red;
+    width: fit-content;
+    color: white;
+    padding: 0 10px;
+}
+
+.done {
+    color: #517d81;
+}
+
+.done::after {
+    content: ' ✓';
+}
