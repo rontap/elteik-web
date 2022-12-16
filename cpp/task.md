@@ -1,3 +1,4 @@
+2021-es feladat
 A Programozási Nyelvek (C++) beadandódat csatoltan küldöm, a feladat leírása a main.cpp elején megtalálható.
 
 Kérlek, hogy feladatot önállóan oldd meg! Ha a feladat leírása kapcsán valami nem egyértelmű, akkor engem kérdezzél meg
