@@ -2,94 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Nummód Gépi számok</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+
+    <script src="./Float.class.js"></script>
     <style>
         [minp] {
-            width: 80px;
+            width: 180px;
         }
+
+        body {
+            margin: 20px;
+            max-width: 800px;
+        }
+
+        .form-control {
+            display: inline;
+        }
+
+        hr[s] {
+            margin:5px;
+            margin-bottom:-10px;
+        }
+        .big {
+            font-size:16px;
+
+        }
+         * {
+             font-family: "Bahnschrift", sans-serif;
+         }
     </style>
 </head>
 <body>
 
-<div>
+<h2>Numerikus Módszerek | Gépi számok</h2>
+<hr/>
+<form class="form-group" action="#">
+    <h3>Step 1: Add meg a Gépi szám adatait</h3>
     <br/>
-    M(<input type="number" placeholder="Mantissza" minp id="mant"/>,
-    <input type="number" placeholder="KarakMin" minp id="karmin"/>,
-    <input type="number" placeholder="KarakMax" minp id="karmax"/>)
-    <br/><br/>
-    fl(<input type="number" placeholder="float" id="flv" )<br/>
-    <br/><br/>
-    <button onclick="proc()">Calc</button>
+    <b>M(
+        t<input class="form-control" type="number" placeholder="Mantissza" minp id="mant"/>,
+        k<sup>-</sup><input class="form-control" type="number" placeholder="Karakterisztika min" minp id="kar_min"/>,
+        k<sup>+</sup><input class="form-control" type="number" placeholder="Karakterisztika max" minp id="kar_max"/>)
+        <br/><br/>
+<!--        fl(<input type="number" placeholder="float" id="flv" )<br/>-->
+
+    </b>
+    <button onclick="proc()" type="submit" class="btn btn-primary">Calc</button>
     <br/>
     <hr/>
+</form>
+
+<h3>Gépi Szám adatai</h3>
+<div class="form-group" id="output">
+    <div class="alert alert-info" role="alert">
+        Add meg a gépi szám alakját
+    </div>
 </div>
 
 <script>
-    class Float {
-        constructor(m, km, kx) {
-            this.m = m;
-            this.km = km;
-            this.kx = kx;
+
+    function write_to_output(str , big) {
+        output.innerHTML += "<br/>"
+        if (!big) {
+            output.innerHTML += `<code>${str}</code>`
+        } else {
+            output.innerHTML +=`<div class="big">${str}</div>`
         }
 
-        repr() {
+    }
 
-        }
-
-        print_repr(bin, man) {
-            return `[ ${bin} | ${man} ]`;
-        }
-
-        e0(print = console.log) {
-            print('e0');
-            print(this.print_repr(this.e0_val, this.km));
-            print('(' + this.eval_repr(this.e0_val) + `) × 2^${this.km}`)
-        }
-
-        minf(print = console.log) {
-            print('m Inf');
-            const minf_val = this.getones(this.m);
-            print(this.print_repr(minf_val, this.kx));
-            print('(' + this.eval_repr(minf_val) + `) × 2^${this.kx}`)
-        }
-        e1(print = console.log) {
-            print('e1');
-            const next = '1' + this.getzeros(this.m - 2) + '1';
-            print(this.print_repr(this.e0_val, 1) + ' - '+ this.print_repr(next, 1));
-
-        }
-        mabs(print = console.log) {
-            print('|M|');
-            print(`2 × 2^${this.m-1} × ( ${this.kx} + ${Math.abs(this.km)} + 1)  +1`)
-        }
-
-        eval_repr(aRepr) {
-            return aRepr.split('').map(this.eval_nth).join('').slice(0, -1);
-        }
-
-        eval_nth(isTrue, nth) {
-            if (isTrue === '1') {
-                return `(1/${Math.pow(2, nth + 1)})+`
-            } else return '';
-        }
-
-        get e0_val() {
-            return '1' + this.getzeros(this.m - 1);
-        }
-
-        getzeros(nth) {
-            return '0'.repeat(nth)
-        }
-
-        getones(nth) {
-            return '1'.repeat(nth)
-        }
+    function divide() {
+        output.innerHTML += "<hr s/>"
     }
 
     function proc() {
+        output.innerHTML = "";
+        const proc_float = new Float(
+            mant.valueAsNumber,
+            kar_min.valueAsNumber,
+            kar_max.valueAsNumber
+        )
 
+        if (errors_found(proc_float)) return false;
+
+        proc_float.e0(write_to_output)
+        divide()
+        proc_float.e1(write_to_output)
+        divide()
+        proc_float.minf(write_to_output)
+        divide()
+        proc_float.mamount(write_to_output)
+
+        return false
     }
 
+    function errors_found(proc_float) {
+        const errors = []
+        if (isNaN(proc_float.m) || isNaN(proc_float.m) || isNaN(proc_float.m))
+            errors.push("Mindhárom értéket kötelező számmal kitölteni.")
+        if (proc_float.m < 1) errors.push("A mantissza értéke minimum 1")
+        if (proc_float.km > 0) errors.push("A karakterisztika minimum értéke maximum 0")
+        if (proc_float.kx < 0) errors.push("A karakterisztika maximum értéke minimum 0")
+
+
+        if (errors.length > 0) {
+            console.log(errors);
+            output.innerHTML = `
+            <div>
+               <div class="alert alert-danger" role="alert">
+                    ${errors.join('<br/>')}
+               </div>
+            </div>
+            `
+            return true;
+        } else return false;
+    }
+
+    let FL;
 
     a = new Float(6, -10, 10)
 </script>

@@ -36,12 +36,10 @@ All projects have achieved maximum points
 
 [JS Handin 2021 (Labyrinth)](https://rontap.github.io/elteik-web/web-dev/js/bead1/index.html) 
 
-[JS Class ZH 1](https://rontap.github.io/elteik-web/web-dev/js/bigzh1/index.html)
-
+[JS Class ZH 1](https://rontap.github.io/elteik-web/web-dev/js/bigzh1/index.html) | 
 [JS Small ZH 1](https://rontap.github.io/elteik-web/web-dev/js/zh1/index.html)
 
-[PHP ZH 1](https://rontap.github.io/elteik-web/web-dev/php/zh/README.md) 
-
+[PHP ZH 1](https://rontap.github.io/elteik-web/web-dev/php/zh/README.md) | 
 [PHP Handin 2022](https://rontap.github.io/elteik-web/web-dev/php/bead/readme.md) 
 
 ### Java (ProgTech F)
