@@ -109,7 +109,8 @@ TODO
         output.innerHTML += "<hr s/>"
     }
 
-    function proc() {
+    function proc(event) {
+        event.preventDefault();
         output.innerHTML = "";
         const proc_float = new Float(
             mant.valueAsNumber,
