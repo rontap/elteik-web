@@ -9,8 +9,8 @@ class Float {
 
     }
 
-    print_repr(bin, man) {
-        return `[ ${bin} | ${man} ]`;
+    print_repr(bin, kar) {
+        return `[ ${bin} | ${kar} ]`;
     }
 
     e0(print = console.log) {
@@ -31,7 +31,7 @@ class Float {
     }
 
     e1(print = console.log) {
-        print('ε<sub>1</sub> - legkisebb lépésköz' , true);
+        print('ε<sub>1</sub> - legkisebb lépésköz, relatív számábrázolási hiba' , true);
         const next = '1' + this.getzeros(this.m - 2) + '1';
         print(this.print_repr(this.e0_val, 1) + ' - ' + this.print_repr(next, 1));
         const calc = ` 2 **(1-${this.m})`;

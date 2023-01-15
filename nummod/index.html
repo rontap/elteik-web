@@ -36,14 +36,17 @@
          * {
              font-family: "Bahnschrift", sans-serif;
          }
+         #conv_actual {
+             display:none;
+         }
     </style>
 </head>
 <body>
 
-<h2>Numerikus Módszerek | Gépi számok</h2>
+<h2>Numerikus Módszerek | Gépi Számok</h2>
 <hr/>
 <form class="form-group" action="#">
-    <h3>Step 1: Add meg a Gépi szám adatait</h3>
+    <h3>Step 1: Add meg a Gépi Szám adatait</h3>
     <br/>
     <b>M(
         t<input class="form-control" type="number" placeholder="Mantissza" minp id="mant"/>,
@@ -53,7 +56,9 @@
 <!--        fl(<input type="number" placeholder="float" id="flv" )<br/>-->
 
     </b>
-    <button onclick="proc()" type="submit" class="btn btn-primary">Calc</button>
+    <button onclick="proc()" type="submit" class="btn btn-primary">
+        Számolás
+    </button>
     <br/>
     <hr/>
 </form>
@@ -64,6 +69,29 @@
         Add meg a gépi szám alakját
     </div>
 </div>
+<hr/>
+<h3>Gépi Szám konvertálása</h3>
+TODO
+<div class="form-group" id="conv_place">
+<!--    <div class="alert alert-info" role="alert">-->
+<!--        Add meg a gépi szám alakját gépi szám konvertáláshoz.-->
+<!--    </div>-->
+</div>
+<div class="form-group" id="conv_actual">
+<!--    A fent megadott M.-ben<br/>-->
+<!--    [ <input class="form-control" type="number" id="fl_m" placeholder="Bináris szám" minp/> |-->
+<!--    <input class="form-control" type="number" id="fl_k" placeholder="Karakterisztika" minp/> ]-->
+
+<!--    <br/><br/>-->
+<!--    <button onclick="proc_conv()" type="submit" class="btn btn-secondary">-->
+<!--        Számolás-->
+<!--    </button>-->
+
+<!--    <br/>-->
+<!--    <br/>-->
+
+</div>
+<hr/>
 
 <script>
 
@@ -90,6 +118,9 @@
         )
 
         if (errors_found(proc_float)) return false;
+
+        conv_place.style.display = "none";
+        conv_actual.style.display = "block";
 
         proc_float.e0(write_to_output)
         divide()
