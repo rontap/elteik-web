@@ -26,19 +26,22 @@
         }
 
         hr[s] {
-            margin:5px;
-            margin-bottom:-10px;
+            margin: 5px;
+            margin-bottom: -10px;
         }
+
         .big {
-            font-size:16px;
+            font-size: 16px;
 
         }
-         * {
-             font-family: "Bahnschrift", sans-serif;
-         }
-         #conv_actual {
-             display:none;
-         }
+
+        * {
+            font-family: "Bahnschrift", sans-serif;
+        }
+
+        #conv_actual {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +56,7 @@
         k<sup>-</sup><input class="form-control" type="number" placeholder="Karakterisztika min" minp id="kar_min"/>,
         k<sup>+</sup><input class="form-control" type="number" placeholder="Karakterisztika max" minp id="kar_max"/>)
         <br/><br/>
-<!--        fl(<input type="number" placeholder="float" id="flv" )<br/>-->
+        <!--        fl(<input type="number" placeholder="float" id="flv" )<br/>-->
 
     </b>
     <button onclick="proc(event)" type="submit" class="btn btn-primary">
@@ -73,34 +76,34 @@
 <h3>Gépi Szám konvertálása</h3>
 TODO
 <div class="form-group" id="conv_place">
-<!--    <div class="alert alert-info" role="alert">-->
-<!--        Add meg a gépi szám alakját gépi szám konvertáláshoz.-->
-<!--    </div>-->
+    <!--    <div class="alert alert-info" role="alert">-->
+    <!--        Add meg a gépi szám alakját gépi szám konvertáláshoz.-->
+    <!--    </div>-->
 </div>
 <div class="form-group" id="conv_actual">
-<!--    A fent megadott M.-ben<br/>-->
-<!--    [ <input class="form-control" type="number" id="fl_m" placeholder="Bináris szám" minp/> |-->
-<!--    <input class="form-control" type="number" id="fl_k" placeholder="Karakterisztika" minp/> ]-->
+    <!--    A fent megadott M.-ben<br/>-->
+    <!--    [ <input class="form-control" type="number" id="fl_m" placeholder="Bináris szám" minp/> |-->
+    <!--    <input class="form-control" type="number" id="fl_k" placeholder="Karakterisztika" minp/> ]-->
 
-<!--    <br/><br/>-->
-<!--    <button onclick="proc_conv()" type="submit" class="btn btn-secondary">-->
-<!--        Számolás-->
-<!--    </button>-->
+    <!--    <br/><br/>-->
+    <!--    <button onclick="proc_conv()" type="submit" class="btn btn-secondary">-->
+    <!--        Számolás-->
+    <!--    </button>-->
 
-<!--    <br/>-->
-<!--    <br/>-->
+    <!--    <br/>-->
+    <!--    <br/>-->
 
 </div>
 <hr/>
 
 <script>
 
-    function write_to_output(str , big) {
+    function write_to_output(str, big) {
         output.innerHTML += "<br/>"
         if (!big) {
             output.innerHTML += `<code>${str}</code>`
         } else {
-            output.innerHTML +=`<div class="big">${str}</div>`
+            output.innerHTML += `<div class="big">${str}</div>`
         }
 
     }
@@ -139,7 +142,6 @@ TODO
         if (isNaN(proc_float.m) || isNaN(proc_float.m) || isNaN(proc_float.m))
             errors.push("Mindhárom értéket kötelező számmal kitölteni.")
         if (proc_float.m < 1) errors.push("A mantissza értéke minimum 1")
-        if (proc_float.km > 0) errors.push("A karakterisztika minimum értéke maximum 0")
         if (proc_float.kx < 0) errors.push("A karakterisztika maximum értéke minimum 0")
 
 

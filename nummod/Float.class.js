@@ -42,7 +42,7 @@ class Float {
 
     mamount(print = console.log) {
         print('|M| - gépi számhalmaz számossága' , true);
-        const calc = `2 * 2**${this.m - 1} * ( ${this.kx} + ${Math.abs(this.km)} + 1)  +1`
+        const calc = `2 * (2**${this.m - 1}) * ( ${this.kx} - ${this.km} + 1)  +1`
         print(' Számolás: ' + calc)
         print(' Értéke: ' + eval(calc))
     }
