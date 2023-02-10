@@ -5,6 +5,9 @@ Stuff I had to do while doing ELTE IK
 ```javascript
 be('good') || be('ELTE')
 ```
+## Teaching
+
+[Opszs / Operációs Rendszerek](https://rontap.github.io/elteik-web/teaching/opsys/)
 
 ## Notes
 
