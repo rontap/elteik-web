@@ -28,10 +28,10 @@ int main(){
   //e.g. SIGNOCLDSTOP - after the child process ended it won't send a signal to the parent 
   //3. parameter - &old sigset or NULL. 
   //If there is a variable, the function will fill with the value of formerly set sigset
- //*************************
+ // *************************
  //real time signals between SIGRTMIN - SIGRTMAX 32-64
  //Several delivery
- //************************************************  
+ // ************************************************  
   sigaction(SIGRTMIN,&sigact,NULL);
  
   pid_t child=fork();
