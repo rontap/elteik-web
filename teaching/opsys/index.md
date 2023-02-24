@@ -1,12 +1,15 @@
 # Opsys Gyakorlat
 
+## Linkek
+
+[Canvas](TODO)
+[Tárgy Honlapja](https://opsys.inf.elte.hu/)
+
 ## Adatok
 
 Tárgy neve: Operációs Rendszerek Ea+Gy  
 Előadó, Tárgyfelelős, ZH-k készítése: Dr Illés Zoltán ( illes@inf.elte.hu ) \
 Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elte.hu )
-
-[Tárgy Honlapja](https://opsys.inf.elte.hu/)
 
 ## Időpontok
 
@@ -18,13 +21,31 @@ Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elt
 
 - _tényleges tervezett időpont: 13:00:13:45_
 
-# Tanterv (??)
+# Tanterv
+
+## Órák
+
+*ez egy tervezet, még nem végleges.*
+Az egyes órák anyagát a linkre kattintva lehet megnézni.
+
+1. óra : Ismétlés (gy0)
+2. óra : Fork (gy1)
+3. óra : File Descriptors (gy1)
+4. óra : Signal (gy2)
+5. óra : Pipe (gy3)
+6. Beadandó 1 bemutatás
+7. óra : Feladat megoldás (gy4)
+8. óra : ???
+9. Beadandó 2 bemutatás
+10. óra : Message Queue (gy5)
+11. óra : Shared Memory (gy5)
+12. óra : Shm + Szemafor (gy6)
 
 ## Számonkérés & Követelmények
 
 ### 2 db beadandó.
 
-- Az első pár óra anyagából.
+- Az első beadandó az első pár óra anyagából.
 - Az második beadandó az első beadandó továbbfejlesztve.   
   A működő és helyes beadandók kellenek a tárgy teljesítéséhez.  
   A beadandót beadás után meg kell védeni,  
@@ -50,25 +71,8 @@ kaphat jegyet.
 
 `jegy = felfele_kerekít( (elméleti_ZH + gyakorlati_ZH ) / 2 ) - kesveBeadottBeadando`
 
-Ha a hallgató mindkét beadandót késve adta be, akkor is csak egy jegy levonás jár.  
-Pl:
-
-## Órák
-
-*ez egy tervezet, még nem végleges.*
-
-1. óra : Ismétlés (gy0)
-2. óra : Fork (gy1)
-3. óra : File Descriptors (gy1)
-4. óra : Signal (gy2)
-5. óra : Pipe (gy3)
-6. Beadandó 1 bemutatás
-7. óra : Feladat megoldás (gy4)
-8. óra : ???
-9. Beadandó 2 bemutatás
-10. óra : Message Queue (gy5)
-11. óra : Shared Memory (gy5)
-12. óra : Shm + Szemafor (gy6)
+Ha a hallgató mindkét beadandót késve adta be, akkor is csak egy jegy levonás jár.
+[Jegyszerzés Példák](#Jegyszerzés-Példák)
 
 ## Kód követelmények
 
