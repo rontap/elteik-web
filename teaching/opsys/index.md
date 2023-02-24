@@ -10,7 +10,13 @@ Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elt
 
 ## Időpontok
 
-TBD
+17.-es kurzus : K:12:00-13:00 (LD 00-503)
+
+- _tényleges tervezett időpont: 12:05:12:50_
+
+18.-as kurzus : K:13:00-14:00 (LD 00-503)
+
+- _tényleges tervezett időpont: 13:00:13:45_
 
 # Tanterv (??)
 
@@ -19,14 +25,15 @@ TBD
 ### 2 db beadandó.
 
 - Az első pár óra anyagából.
-- Az első Beadandót továbbfejlesztve. 3-5 óra anyagáig.  
-  A működő és helyes beadandó jeles jegyet jelent.  
+- Az második beadandó az első beadandó továbbfejlesztve.   
+  A működő és helyes beadandók kellenek a tárgy teljesítéséhez.  
   A beadandót beadás után meg kell védeni,  
   ahol egyszerű elméleti kérdések is fel lesznek téve a
   használt kóddal kapcsolatban.   
-  A védés nagyjából 10-15 percig tart, ahol a hallgatónak előszőr el kell magyarázni a programja működését.
+  A védés nagyjából 10-15 percig tart, ahol a hallgatónak előszőr kell magyarázni a programja működését.
 - Késve beadadott beadandó:
-    - Határidő után maximum egy héttel való késett feltöltés 1 jegy levonást jelent.
+    - Határidő után maximum 1 héttel való késett feltöltés 1 jegy levonást jelent.
+        - Ez eredeti határidő előtt a hallgató kérheti (jogos indokkal) a határidő 2 hétre való hosszabbítását.
     - Ha addig sem tölt fel beadandót, akkor nem kaphat gyakorlati jegyet!
     - A nem hibátlanul működő beadandó javításra lesz visszaküldve, a kapott jegyet ez nem
       befolyásolja.
@@ -86,4 +93,4 @@ következőképp nézne ki: `clang -Wall bead.c`.
 | 3           | 3             | <1 hét késés        | <1 hét késés | 2                 |
 | 5           | 5             | 1 hétnél több késés | időben       | nem kaphat jegyet |
 
---gcc -Wall  -pthread -lrt ./*.c
+--gcc -Wall -pthread -lrt ./*.c
