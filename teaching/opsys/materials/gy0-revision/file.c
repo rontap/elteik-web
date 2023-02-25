@@ -5,6 +5,7 @@
 #include <sys/types.h> //open
 #include <sys/stat.h>
 #include <errno.h> //perror, errno
+#include <unistd.h>
 
 int main(int argc, char **argv) {
 
