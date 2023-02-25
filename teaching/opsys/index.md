@@ -2,7 +2,7 @@
 
 ## Linkek
 
-[Canvas](TODO)  
+[Canvas](TODO) // TODO  
 [Tárgy Honlapja](https://opsys.inf.elte.hu/)
 
 ## Adatok
@@ -51,7 +51,7 @@ Az egyes órák anyagát a linkre kattintva lehet megnézni.
   A működő és helyes beadandók kellenek a tárgy teljesítéséhez.  
   A beadandót beadás után majd meg kell védeni online,  
   ahol egyszerű elméleti kérdések is fel lesznek téve a
-  használt kóddal kapcsolatban. Ez azt szolgálja, hogy a hallgató érti-e a saját kódját.
+  használt kóddal kapcsolatban.
 - A védés nagyjából 10 percig tart.
 
 ### 2 db ZH.
@@ -100,10 +100,9 @@ Plusz szerzés lehetőségek:
 Vagyis  
 `kerekítő_függvény = if (pluszok_száma >= 3) { felfele_kerekít } else { lefele_kerekít }`  
 
-[Jegyszerzés Példák](#jegyszerzés-példák)
 
 ## Kód követelmények
-
+*ez egy tervezet, még nem végleges.*
 Egy beadandó csak akkor tekinthető "kész"-nek, ha legalább az alábbi paranccsal lefordul.
 Ha valaki olyan kódot ad be, ami még a saját gépén sem fordul, akkor az késésnek számít.
 
@@ -116,13 +115,6 @@ következőképp nézne ki: `clang -Wall bead.c`.
 
 ## Melléklet
 
-#### Jegyszerzés Példák
 
-| Elméleti ZH | Gyakorlati ZH | Beadandó 1          | Beadandó 2   | Végső jegy        |
-|-------------|---------------|---------------------|--------------|-------------------|
-| 5           | 4             | időben              | időben       | 5                 |
-| 3           | 4             | időben              | <1 hét késés | 3                 |
-| 3           | 3             | <1 hét késés        | <1 hét késés | 2                 |
-| 5           | 5             | 1 hétnél több késés | időben       | nem kaphat jegyet |
 
 --gcc -Wall -pthread -lrt ./*.c
