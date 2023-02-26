@@ -1,6 +1,6 @@
 # Opsys Gyakorlat / 1. Óra : Előkészületek
 
-[Vissza]()
+[Vissza](index.md)
 
 ---
 
@@ -58,4 +58,6 @@ Természetesen olyan IDE-t használtok, amit szeretnétek. Ez már csak ajánlá
 > és ez problémát okozhat, ha CodeBlocks-ban teszteled csak a kódot.
 ---
 
-[Vissza]()
+[Kezdőlap](index.md)
+|
+[Tovább](gy0.md)
