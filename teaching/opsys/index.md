@@ -24,7 +24,7 @@ Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elt
 *Ez egy tervezet, még nem végleges.*
 Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 
-1. óra : Környezet beállítása _Nincs szinkron (jelenléti vagy online) óra_
+1. óra : [Környezet beállítása](prep.md) _Nincs szinkron (jelenléti vagy online) óra_
 2. óra : Ismétlés (gy0)
 3. óra : Fork (gy1)
 4. óra : File Descriptors (gy1) & Basic Signal (gy2)
