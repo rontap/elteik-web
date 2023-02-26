@@ -48,10 +48,11 @@ a szerverrel. Csak a teljesség kedvéért említem.
 
 ## 2.: IDE választása
 
-Természetesen olyan IDE-t használtok, amit szeretnétek. Ez már csak ajánlás.
+Természetesen olyan IDE-t használtok, amit szeretnétek. Ez már csak személyes ajánlás.
 
 - [VScode](https://code.visualstudio.com/) - Könnyű és gyors IDE.
-- [CLion](https://www.jetbrains.com/clion/) - Ha ismered az IntelliJ-t, akkor idális választás. Sokkal teljeskörűbb támogatást ad, mint a Vsode. ELTE-s diákként jár licence hozzá.
+- [CLion](https://www.jetbrains.com/clion/) - Ha ismered az IntelliJ-t, akkor ideális választás. 
+Sokkal teljeskörűbb támogatást ad, mint a Vscode. ELTE-s diákként jár licence hozzá.
 
 > **Megjegyzés:**
 > Code::Blocks-ot kifejezetten nem ajánlom. A beadandó bemutatásakor terminálból kell fordítani majd a kódot, 
