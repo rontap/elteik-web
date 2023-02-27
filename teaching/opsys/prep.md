@@ -4,12 +4,14 @@
 
 ---
 
+Az első megtartott óráig kérlek állítsátok össze a fejlesztő környezeteteket.  
+Ha esetleg elakadtok, nyugodtan kérdezzetek teams-en.
+
 ## 1.: Fordító telepítése
 
 Unix-Szerű környzet (Linux, MacOS, WSL) kell
 a tárgy feladatainak a megoldásához.
 
-Az első megtartott óráig kérlek állítsátok össze a fejlesztő környezeteteket.
 
 ### Linux & Mac
 
@@ -31,7 +33,7 @@ segítségével be tudtok lépni a linuxos környezetbe.
 **Replit:**  
 A kódok eléggé egyszerűek ahhoz, hogy online felületen is lehessen szerkeszteni.
 Ha több gép között járkálsz, esetleg a géped nem támogatja a WSL-t, akkor ezzel jársz a legjobban.
-Hátránya, hogy eléggé lassú.
+Hátránya, hogy eléggé lassú.  
 [https://replit.com/](https://replit.com/)
 
 **Opsys szerver:**  
@@ -45,18 +47,43 @@ a szerverrel. Csak a teljesség kedvéért említem.
 > **Megjegyzés:**  
 > Nem elég simán windows-os C compilert használni (pl mingw, msvc++), specifikusan Unix/Linux környezet kell.
 
-
 ## 2.: IDE választása
 
 Természetesen olyan IDE-t használtok, amit szeretnétek. Ez már csak személyes ajánlás.
 
 - [VScode](https://code.visualstudio.com/) - Könnyű és gyors IDE.
-- [CLion](https://www.jetbrains.com/clion/) - Ha ismered az IntelliJ-t, akkor ideális választás. 
-Sokkal teljeskörűbb támogatást ad, mint a Vscode. ELTE-s diákként jár licence hozzá.
+- [CLion](https://www.jetbrains.com/clion/) - Ha ismered az IntelliJ-t, akkor ideális választás.
+  Sokkal teljeskörűbb támogatást ad, mint a Vscode. ELTE-s diákként jár licence hozzá.
 
 > **Megjegyzés:**
-> Code::Blocks-ot kifejezetten nem ajánlom. A beadandó bemutatásakor terminálból kell fordítani majd a kódot, 
-> és ez problémát okozhat, ha CodeBlocks-ban teszteled csak a kódot.
+> Code::Blocks-ot kifejezetten nem ajánlom. A beadandó bemutatásakor terminálból kell fordítani majd a kódot,
+> és ez problémát okozhat, ha Code::Blocks-ban teszteled csak a kódot.
+---
+
+## 3.: Egyszerű teszt
+
+Nézzétek meg, hogy tudtok-e ténylegesen kódot fordítani, például hozzatok létre egy `test.c` file-t ezzel a tartalommal:
+
+```c
+#include <stdio.h>
+#include <sys/wait.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+int main() {
+    printf("Hello World \n");
+    return 0;
+}
+```
+És fordítsátok le (és futtassátok) az alábbi paranccsal:
+```shell
+ gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic ./test.c  && ./a.out 
+```
+
+Ha mindenféle hiba nélkül egy sima hello world-öt láttok, **akkor kész vagytok**.
+
+> **Megjegyzés:**
+> MacOS-en `gcc` helyett `clang`-ot érdemes használni.
+
 ---
 
 [Kezdőlap](index.md)
