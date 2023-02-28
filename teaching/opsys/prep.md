@@ -9,13 +9,14 @@ Ha esetleg elakadtok, nyugodtan kérdezzetek teams-en.
 
 ## 1.: Fordító telepítése
 
-Unix-Szerű környzet (Linux, MacOS, WSL) kell
-a tárgy feladatainak a megoldásához.
-
+Unix-Szerű környezet (Linux, MacOS, WSL) kell
+a tárgy feladatainak a megoldásához.  
+A gyakorlatokon `C`-ben fogunk programozni.   
+Ehhez szűkséges a `gcc` fordító csomag felrakása.
 
 ### Linux & Mac
 
-A `gcc` / `clang` C nyelv fordítónak el kéne lenne telepítve, terminálból ellenőrizhetitek ezt.
+A `gcc` / `clang` C nyelv fordítónak el kéne lenne telepítve, terminálból ellenőrizhetitek ezt.: `gcc --version` 
 
 ### Windows
 
@@ -28,7 +29,8 @@ Hivatalos telepítési útmutató:
 
 Telepítés után a windows parancssorból a `wsl` parancs
 segítségével be tudtok lépni a linuxos környezetbe.  
-És a `cd /mnt/c`-vel pedig a C meghajtótokhoz is hozzáférhettek.
+És a `cd /mnt/c`-vel pedig a C meghajtótokhoz is hozzáférhettek.  
+A file-okat windows alól ugyanúgy megnyithatjátok és szerkeszthetitek, csak a fordításhoz és futtatáshoz kell majd a wsl
 
 **Replit:**  
 A kódok eléggé egyszerűek ahhoz, hogy online felületen is lehessen szerkeszteni.
@@ -74,12 +76,17 @@ int main() {
     return 0;
 }
 ```
+
 És fordítsátok le (és futtassátok) az alábbi paranccsal:
+
 ```shell
  gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic ./test.c  && ./a.out 
 ```
 
-Ha mindenféle hiba nélkül egy sima hello world-öt láttok, **akkor kész vagytok**.
+Ha mindenféle hiba nélkül egy sima hello world-öt láttok, **akkor kész vagytok**, a gyakorlat anyagát tudjátok majd
+saját gépen is követni.  
+**Ha a kód nem fordul, írjatok teams-en és próbálok segíteni.**
+
 
 > **Megjegyzés:**
 > MacOS-en `gcc` helyett `clang`-ot érdemes használni.
