@@ -44,7 +44,8 @@ int main() {
         perror("Some problem in opening");
         exit(1);
     }
-    while (dp = readdir(d)) {
+    dp = readdir(d);
+    while (dp) {
         stat(dp->d_name, &st);  //fstat(file descriptor, stat structure)
         if (S_ISDIR(st.st_mode)) {
             printf("d:");
@@ -53,6 +54,7 @@ int main() {
             else printf("- ");
         }
         printf("%s\n", dp->d_name);
+        dp = readdir(d);
     }
     closedir(d); //close directory after opendir
     return 0;

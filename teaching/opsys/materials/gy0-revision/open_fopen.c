@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include <errno.h> //perror, errno
 #include <string.h>
+#include <unistd.h>
 
 
 void use_open_bin(char *fname) {
@@ -27,23 +28,6 @@ void use_open_bin(char *fname) {
     close(f);
 }
 
-void use_fopen_text(char *fname) {
-    printf("\n******************\nUsing fopen -  reads in lines\n*****************\n");
-    FILE *f;
-    f = fopen(fname, "r");
-    if (f == NULL) {
-        perror("File opening error\n");
-        exit(1);
-    }
-    char line[160];
-    while (!feof(f)) {
-        fgets(line, sizeof(line), f);
-        printf("%s", line);
-    }
-    printf("\n");
-    fclose(f);
-}
-
 void use_fopen_bin(char *fname) {
     printf("\n******************\nUsing fopen -  binary \n*****************\n");
     FILE *f;
@@ -62,6 +46,23 @@ void use_fopen_bin(char *fname) {
     fread(&c, sizeof(c), sizeof(c), f);
     printf("First character - after positioning %c\n", c);
 
+    fclose(f);
+}
+
+void use_fopen_text(char *fname) {
+    printf("\n******************\nUsing fopen -  reads in lines\n*****************\n");
+    FILE *f;
+    f = fopen(fname, "r");
+    if (f == NULL) {
+        perror("File opening error\n");
+        exit(1);
+    }
+    char line[160];
+    while (!feof(f)) {
+        fgets(line, sizeof(line), f);
+        printf("%s", line);
+    }
+    printf("\n");
     fclose(f);
 }
 

@@ -16,7 +16,9 @@ int main() {
     //1. parameter formatstring, next parameter(s) variables
     //%s = string, %i = integer \n = new line e.g.
 
-    printf("The length of variable str1 \'%s\'\n  %i (with length()), %i (with strlen())\n", str1, length(str1),
+    printf("The length of variable str1 \'%s\'\n "
+           " %i (with length()), %li (with strlen())\n",
+           str1, length(str1),
            strlen(str1));
     //The end of a string is a 0 character
     //There is the function strlen!! in string.h
@@ -25,7 +27,10 @@ int main() {
     str2 = str1; //the pointer shows to the same memory place
     printf("The content of variable str2 \'%s\' is the same as str1 \'%s\' \n(pointing the same memory place)\n", str2,
            str1);
-    str2 = (char *) malloc(80 * sizeof(char)); //allocate new memory
+
+    //str2 = (char *) malloc(2 * sizeof(char)); // BYTE
+
+
     //calloc, realloc, free - functions for allocating memory and freeing up the memory
     str2[0] = 'O'; //to write value character by character
     str2[1] = 'S';
