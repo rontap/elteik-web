@@ -2,7 +2,7 @@
 
 ## Linkek
 
-[Canvas](TODO) // TODO  
+[Canvas](https://canvas.elte.hu/courses/35103)
 [Tárgy Honlapja](https://opsys.inf.elte.hu/)
 
 ## Adatok
@@ -11,11 +11,11 @@ Tárgy neve: Operációs Rendszerek Ea+Gy
 Előadó, Tárgyfelelős, ZH-k és beadandók készítése: Dr Illés Zoltán ( illes@inf.elte.hu ) \
 Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elte.hu )
 
-## Időpontok[main.c](materials%2Fgy0-revision%2Fmain.c)
+## Időpontok
 
-17.-es kurzus : K:12:00-13:00 (LD 00-503)  _tényleges tervezett időpont: 12:05:12:50_
+17.-es kurzus : K:12:00-13:00 (LD 00-503)  _tényleges tervezett időpont: 12:05:12:55_
 
-18.-as kurzus : K:13:00-14:00 (LD 00-503)  _tényleges tervezett időpont: 13:05:13:50_
+18.-as kurzus : K:13:00-14:00 (LD 00-503)  _tényleges tervezett időpont: 13:05:13:55_
 
 # Tanterv
 
@@ -32,14 +32,14 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 6. óra : Pipe (gy3)
 7. óra : ???
 8. óra : Feladat megoldás (gy4)
-9. óra : ???
-10. óra : Message Queue (gy5)
-11. óra : Shared Memory (gy5)
-12. óra : Shm + Semaphore (gy6)
+9. óra : Message Queue (gy5)
+10. óra : Shared Memory (gy5) _Rákövetkező héten Elméleti ZH_
+11. óra : Shm + Semaphore (gy6) _Rákövetkező héten Gyakorlati ZH_
+12. óra : Konzultáció, Pótzh kérdések
 
 ## Letöltések
 
-1. Ismétlés Anyaga: [Gy0]
+1. Ismétlés Anyaga: [Gy0]()
 
 ## Számonkérés & Követelmények
 
