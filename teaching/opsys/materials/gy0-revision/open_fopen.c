@@ -19,7 +19,7 @@ void use_open_bin(char *fname) {
 
     char c; //instead of char, you can use any other type, struct as well
     while (read(f, &c, sizeof(c))) { //use write for writing
-        printf("%c", c); //we prints out the content of the file on the screen
+        printf("%c", c); //we print out the content of the file on the screen
     }
     printf("\n");
     lseek(f, 0, SEEK_SET); //position to the first character, SEEK_SET,SEEK_CUR,SEEK_END

@@ -11,7 +11,7 @@ Tárgy neve: Operációs Rendszerek Ea+Gy
 Előadó, Tárgyfelelős, ZH-k és beadandók készítése: Dr Illés Zoltán ( illes@inf.elte.hu ) \
 Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elte.hu )
 
-## Időpontok
+## Időpontok[main.c](materials%2Fgy0-revision%2Fmain.c)
 
 17.-es kurzus : K:12:00-13:00 (LD 00-503)  _tényleges tervezett időpont: 12:05:12:50_
 
@@ -25,7 +25,7 @@ Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elt
 Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 
 1. óra : [Környezet beállítása](prep.md) _Nincs szinkron (jelenléti vagy online) óra_
-2. óra : Ismétlés (gy0)
+2. óra : [Ismétlés](gy0.md) (gy0)
 3. óra : Fork (gy1)
 4. óra : File Descriptors (gy1) & Basic Signal (gy2)
 5. óra : Signal (gy2)
@@ -36,6 +36,10 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 10. óra : Message Queue (gy5)
 11. óra : Shared Memory (gy5)
 12. óra : Shm + Semaphore (gy6)
+
+## Letöltések
+
+1. Ismétlés Anyaga: [Gy0]
 
 ## Számonkérés & Követelmények
 
