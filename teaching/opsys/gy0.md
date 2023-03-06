@@ -1,6 +1,8 @@
 # 2. Óra / Gy0 / Ismétlés
 
-## Fileok letöltése
+## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
+
+[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
 
 ## Fileok fordítása
 

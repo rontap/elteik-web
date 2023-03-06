@@ -39,7 +39,7 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 
 ## Letöltések
 
-1. Ismétlés Anyaga: [Gy0]()
+1. Ismétlés Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
 
 ## Számonkérés & Követelmények
 
