@@ -12,14 +12,20 @@
 
 ## Óra Outline
 
-- [ ] Adminsztráció, A tárgyról röviden `5p`
-- [ ] C és POSIX/UNIX-ról `5p`
-- [ ] Interaktív: Mit tudunk a C-ről? Manpages, gcc `5p`
-- [ ] Pointerek recap + Bináris vagy, és `10p`
-- [ ] `strings.c 10p` malloc, pointer magic, strlen
-- [ ] `open_fopen.c 5p` FILE*
-- [ ] `arg.c, directory.c 5p` char**
-- [ ] `file.c 5p` improve code
+- [ ]  Adminsztráció, A tárgyról röviden, jelenlét `5p`
+- [ ]  C és POSIX/UNIX-ról `5p`
+- [ ]  Interaktív: Mit tudunk a C-ről? Manpages, gcc `5p`
+- [ ]  Pointerek recap + Bináris vagy, és `10p`
+- [ ]  `strings.c 10p` malloc, pointer magic, strlen
+- [ ]  `open_fopen.c 5p` FILE* gets, puts
+- [ ]  `arg.c, directory.c 5p` char**
+- [ ]  `file.c 5p` improve code
+- [ ]  _optional_ `fork` intro
+
+## Órai Munka
+
+- `file.c` -ben az file írást átírni `size_t` használhatára
+- `libopsys.h` feltöltése
 
 [Kezdőlap](index.md)
 |
