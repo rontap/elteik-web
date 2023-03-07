@@ -34,21 +34,13 @@ int main(int argc, char **argv) {
 
     char c;
 
-    while (1) {
-        fread(&c, sizeof(c), sizeof(c), f);
-
-        if (feof(f)) {
-            break;
-        }
-
+    while (fread(&c, sizeof(c), sizeof(c), f)) {
         printf("%c", c);
         size_t res = fwrite(&c, sizeof(c), sizeof(c), g);
-
         if (res != 1) {
             perror("There is a mistake in writing\n");
             exit(1);
         }
-
     }
     printf("\n");
     fclose(f);

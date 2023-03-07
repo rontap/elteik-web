@@ -13,50 +13,49 @@
 
 int main() {
     int value = 5;
-    int bignum = 100000;
+    int bignum = 100000000000;
     int *ptr;
     ptr = &value;
 
-    printf("---\n");
-
-
-    printf("%i\n", ptr);
-    printf("%i\n", *ptr);
-    printf("%i\n", &(*ptr));
-    printf("%i\n", &value);
-
+//    printf("%i",bignum);
+//
+//    printf("---\n");
+//
+//    printf("%i\n", ptr);
+//    printf("%i\n", *ptr);
+//    printf("%i\n", &(*ptr));
+//    printf("%i\n", &value);
+//
 //    int **ptr_ptr;
-//    ptr_ptr = &ptr;
+//
 //
 //    printf("---\n");
 //
 //    printf("%i\n", ptr_ptr);
 //    printf("%i\n", *ptr_ptr);
 //    printf("%i\n", **ptr_ptr);
-//
-//    printf("---\n");
+
+    printf("---\n");
 
 
 // hex
     int A = 0x001; // 0b00000000 00000000 00000001
     int B = 0x010; // 0b00000000 00000001 00000000
     int C = 0x100; // 0b00000001 00000000 00000000
-    int E = 0x110; // 0b00000001 00000001 00000000
+    int E = 0x210; // 0b00000001 00000001 00000000
     int D = 0x101; // 0b00000001 00000000 00000001
 
-
-
 //
 //
 //
-//    printf("%i\n", bignum);
-//    printf("%i\n", A);
-//    printf("%i\n", B);
-//    printf("%i\n", C);
-//    printf("%i\n", A | B | C); // ||
-//    printf("%i\n", A + B + C); // ||
-//    printf("%i\n", A + A); // ||
-//    printf("%i\n", A | A); // ||
-//    printf("%i\n", C & E); // &&
+    printf("%i\n", bignum);
+    printf("%i\n", A);
+    printf("%i\n", B);
+    printf("%i\n", C);
+    printf("%i\n", E | C); // ||
+//    printf("%i\n", E + C); // ||
+    printf("%i\n", A + A); // ||
+    printf("%i\n", A | A); // ||
+    printf("%i\n", C & E); // &&
 
 }

@@ -20,8 +20,8 @@ int main() {
     //1. parameter formatstring, next parameter(s) variables
     //%s = string, %i = integer \n = new line e.g.
 //
-    printf("str[0] c %c\n", str1[0]);
-    printf("str[0] i %i\n", str1[0]);
+    printf("str[0] c %c\n", str1[0]); // H
+    printf("str[0] i %i\n", str1[0]); // 72
     printf("str[1] c %c\n", str1[1]);
     printf("str[0]+1 c %c\n", str1[0] + 1);
     printf("*str i %i\n", (*str1));
@@ -39,6 +39,7 @@ int main() {
     str2 = str1; //the pointer shows to the same memory place
     printf("The content of variable str2 \'%s\' is the same as str1 \'%s\' \n(pointing the same memory place)\n", str2,
            str1);
+
 
     str2 = (char *) malloc(2 * sizeof(char)); // BYTE
 
