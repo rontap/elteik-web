@@ -4,6 +4,9 @@
 
 [https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
 
+### Előző részek tartalmából
+
+
 ## Fileok fordítása
 
 ```shell
@@ -12,15 +15,7 @@
 
 ## Óra Outline
 
-- [ ]  Adminsztráció, A tárgyról röviden, jelenlét `5p`
-- [ ]  C és POSIX/UNIX-ról `5p`
-- [ ]  Interaktív: Mit tudunk a C-ről? Manpages, gcc `5p`
-- [ ]  Pointerek recap + Bináris vagy, és `10p`
-- [ ]  `strings.c 10p` malloc, pointer magic, strlen
-- [ ]  `open_fopen.c 5p` FILE* gets, puts
-- [ ]  `arg.c, directory.c 5p` char**
-- [ ]  `file.c 5p` improve code
-- [ ]  _optional_ `fork` intro
+
 
 ## Opcionális telepítendő dolgok
 `fopen` és társai manpage
@@ -30,13 +25,8 @@ sudo apt install manpages-posix-dev
 ```
 
 
-## Órai Munka
-
-- `file.c` -ben az file írást átírni `size_t` használhatára
-- `libopsys.h` feltöltése
-
 [Kezdőlap](index.md)
 |
-[Vissza](prep.md)
+[Vissza](gy0.md)
 |
-[Tovább](gy1.md)
+[Tovább](gy2.md)
