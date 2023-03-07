@@ -4,6 +4,7 @@
 // C Util függvények
 #define true 1
 #define false 0
+// ehelyett lehetne.. #include <bool.h>
 
 //..
 

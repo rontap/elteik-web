@@ -26,7 +26,7 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 
 1. óra : [Környezet beállítása](prep.md) _Nincs szinkron (jelenléti vagy online) óra_
 2. óra : [Ismétlés](gy0.md) (gy0)
-3. óra : Fork (gy1)
+3. óra : [Fork](gy1.md) (gy1)
 4. óra : File Descriptors (gy1) & Basic Signal (gy2)
 5. óra : Signal (gy2)
 6. óra : Pipe (gy3)
@@ -35,12 +35,13 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 9. óra : Message Queue (gy5)
 10. óra : Shared Memory (gy5) _Rákövetkező héten Elméleti ZH_
 11. óra : Shm + Semaphore (gy6) _Rákövetkező héten Gyakorlati ZH_
-12. óra : Konzultáció, Pótzh kérdések 
+12. óra : Konzultáció, Pótzh kérdések
 
 ## Letöltések
 
-1. Ismétlés Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
-
+1. Ismétlés
+   Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
+2. Fork [Gy1]()
 ## Számonkérés & Követelmények
 
 ### 2 db beadandó.

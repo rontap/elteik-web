@@ -3,7 +3,9 @@
 [Vissza](index.md)
 
 ---
+Utolsó frissítés: Március 7.
 
+---
 Az első megtartott óráig kérlek állítsátok össze a fejlesztő környezeteteket.  
 Ha esetleg elakadtok, nyugodtan kérdezzetek teams-en.
 
@@ -81,6 +83,19 @@ int main() {
 
 ```shell
  gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic ./test.c  && ./a.out 
+```
+
+OS/X-en pedig:
+
+```shell
+ clang -Wall -Werror=vla -pthread -std=c11 -pedantic -o a.out ./test.c && ./a.out
+```
+
+Ha WSL-ben nem sikerül a gcc-t használni, futtassátok ezt:
+```shell
+sudo apt upgrade
+sudo apt update
+sudo apt install
 ```
 
 Ha mindenféle hiba nélkül egy sima hello world-öt láttok, **akkor kész vagytok**, a gyakorlat anyagát tudjátok majd

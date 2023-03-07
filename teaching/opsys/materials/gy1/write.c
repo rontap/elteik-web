@@ -2,6 +2,13 @@
 #include <stdlib.h>
 //call it with some parameters from the command line 
 
+/**
+ *  gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic -o write ./write.c
+
+ * @param argc
+ * @param argv
+ * @return
+ */
 int main(int argc, char **argv)
 //char** means an array of character arrays = array of strings
 {

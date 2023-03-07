@@ -21,7 +21,7 @@ int main() {
     {
         //to start a program, like printing out a string (in parameter) 5 times (parameter)
         printf("Call ./write program by calling system function\n");
-        system("./write 'Operating Systems' 5");
+        system("./write 'Operating Systems\n' 5");
         printf("It returns to continue child process after system call \nbecause it starts a new child process and in it will be called an execv\n");
     }
     return 0;
