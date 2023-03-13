@@ -1,6 +1,6 @@
 # 3. Óra / Gy1 / Fork
 
-## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1.zip)
+## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1-opsys.zip)
 
 [https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy01/gy1-opsys.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1-opsys.zip)
 
