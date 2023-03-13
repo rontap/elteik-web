@@ -1,20 +1,12 @@
-//#include <stdlib.h>
-//
-////fork-hoz
-//#include <sys/stat.h>
-// //fork
-// //strlen
-////lock
-//#include <unistd.h>
 #include "libopsys.h"
 
 
 int main() {
     int f;
     char text1[] = " Parent Parent Parent Parent Parent Parent Parent Parent Parent Parent ";
-    int length1 = strlen(text1);
+    int length1 = (int) strlen(text1);
     char text2[] = " Child Child Child Child Child Child Child Child Child Child Child Child ";
-    int length2 = strlen(text2);
+    int length2 = (int) strlen(text2);
     int i;
     struct flock lock_data;
     lock_data.l_whence = SEEK_SET;//the absolute starting position of locking: SEEK_SET - start of file, SEEK_END - end of file, SEEK_CUR - actual place of

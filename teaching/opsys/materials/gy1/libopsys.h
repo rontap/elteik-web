@@ -1,14 +1,15 @@
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/time.h>
+#include <string.h>
+#include <stdbool.h>
+
+#include <errno.h>
 #include <time.h>
 #include <unistd.h>
-#include <sys/wait.h>
-#include <errno.h>
-#include <stdio.h>
 #include <fcntl.h>
-#include <string.h>
+
+#include <sys/time.h>
+#include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
