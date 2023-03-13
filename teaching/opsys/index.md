@@ -2,8 +2,9 @@
 
 ## Linkek
 
-[Canvas](https://canvas.elte.hu/courses/35103)
-[Tárgy Honlapja](https://opsys.inf.elte.hu/)
+[Canvas](https://canvas.elte.hu/courses/35103) |
+[Tárgy Honlapja](https://opsys.inf.elte.hu/) |
+[1. Beadandó learása](bead.md)
 
 ## Adatok
 
@@ -41,12 +42,13 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 
 1. Ismétlés
    Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip)
-2. Fork [Gy1]()
+2. Fork [Gy1](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1-opsys.zip)
+
 ## Számonkérés & Követelmények
 
 ### 2 db beadandó.
 
-- Az első beadandó az első pár óra anyagából.
+- [Az első beadandó](bead.md) az első pár óra anyagából.
 - Az második beadandó az első beadandó továbbfejlesztve.   
   A működő és helyes beadandók kellenek a tárgy teljesítéséhez.  
   A beadandót beadás után majd meg kell védeni online,  

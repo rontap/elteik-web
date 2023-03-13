@@ -4,6 +4,14 @@
 
 [https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy01/gy1-opsys.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1-opsys.zip)
 
+---
+[Kezdőlap](index.md)
+|
+[Vissza](gy0.md)
+|
+[Tovább](gy2md)
+
+
 ## Fileok fordítása
 
 ```shell
@@ -47,10 +55,9 @@ OS/X-en pedig:
 - [ ] Fixing `fcntl.c`
 - [ ] _opcionális_ gy2 signal intro 
 
-## Opcionális telepítendő dolgok
 
 [Kezdőlap](index.md)
 |
 [Vissza](gy0.md)
 |
-[Tovább](gy2.md)
+[Tovább](gy2md)
