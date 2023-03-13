@@ -18,12 +18,12 @@ OS/X-en pedig:
 
 ### Előző részek tartalmából
 
-| Header                | Mit csinál                 |
-|-----------------------|----------------------------|
-| `#include <stdlib.h>` | `rand, malloc, atoi, exit` |
-| `#include <stdio.h>`  | `feof, fopen, scanf, puts` |
-| `#include <string.h>` | `strlen, strrchr, strtok`  |
-| `#include <bool.h>`   | `bool` típus               |
+| Header                 | Mit csinál                 |
+|------------------------|----------------------------|
+| `#include <stdlib.h>`  | `rand, malloc, atoi, exit` |
+| `#include <stdio.h>`   | `feof, fopen, scanf, puts` |
+| `#include <string.h>`  | `strlen, strrchr, strtok`  |
+| `#include <stdbool.h>` | `bool` típus               |
 
 ### Új headerek
 

@@ -1,0 +1,34 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+#include <time.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <errno.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+#ifndef LIBOPSYS_H
+#define LIBOPSYS_H
+
+// C Util függvények
+
+//#define atoi DO_NOT_USE
+//#define usleep DO_NOT_USE
+//#define sleep DO_NOT_USE
+
+
+//int sleep_ms(long milliseconds) {
+//    struct timespec rem;
+//    struct timespec req = {
+//            (int) (milliseconds / 1000),
+//            (milliseconds % 1000) * 1000000
+//    };
+//    return nanosleep(&req, &rem);
+//}
+
+#endif //LIBOPSYS_H

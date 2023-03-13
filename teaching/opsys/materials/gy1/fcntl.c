@@ -1,10 +1,12 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <sys/types.h> //fork-hoz
-#include <sys/stat.h>
-#include <unistd.h> //fork
-#include <string.h> //strlen
-#include <fcntl.h> //lock
+//#include <stdlib.h>
+//
+////fork-hoz
+//#include <sys/stat.h>
+// //fork
+// //strlen
+////lock
+//#include <unistd.h>
+#include "libopsys.h"
 
 
 int main() {

@@ -5,14 +5,14 @@
 #include <unistd.h> //fork
 #include <string.h> //strlen
 #include <fcntl.h> //lock
-
+#include "libopsys.h"
 
 int main() {
     int f;
     char text1[] = " Parent Parent Parent Parent Parent Parent Parent Parent Parent Parent ";
-    int length1 = strlen(text1);
+    int length1 = (int) strlen(text1);
     char text2[] = " Child Child Child Child Child Child Child Child Child Child Child ";
-    int length2 = strlen(text2);
+    int length2 = (int) strlen(text2);
     int i;
     f = open("data_0.txt", O_RDWR | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR);
     pid_t child = fork();
@@ -28,6 +28,7 @@ int main() {
             for (i = 0; i < length1; i++) {
                 write(f, &text1[i], 1);
                 usleep(20);  //waits 20 milisec to slow down writing
+                /* todo: ms_sleep */
             }
             write(f, "\n", 1);
         }
