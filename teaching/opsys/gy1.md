@@ -1,8 +1,8 @@
-# 2. Óra / Gy1 / Fork
+# 3. Óra / Gy1 / Fork
 
 ## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1.zip)
 
-[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy0-revision/gy0-opsys.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1.zip)
+[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy01/gy1-opsys.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1-opsys.zip)
 
 ## Fileok fordítása
 
@@ -42,7 +42,7 @@ OS/X-en pedig:
 - [ ] Új headerek `rand.c` srand!
 - [ ] `fork.c`, Fork bomb, recursive fork
 - [ ] `random`
-- [ ] `write.c` -> `system.c` -> `exec.c`
+- [ ] `write.c` atoi! -> `system.c` -> `exec.c`
 - [ ] `fcntl_0.c`
 - [ ] Fixing `fcntl.c`
 - [ ] _opcionális_ gy2 signal intro 

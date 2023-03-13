@@ -1,5 +1,3 @@
-
-
 #include "libopsys.h"
 
 int main() {

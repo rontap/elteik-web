@@ -13,12 +13,11 @@ int main(int argc, char **argv)
 //char** means an array of character arrays = array of strings
 {
     int i;
-//    for (i = 0; i < atoi(argv[2]); i++) {
-//
-//        printf("%s\n", argv[1]);
-//    }
+    for (i = 0; i < atoi(argv[2]); i++) {
+        printf("%s\n", argv[1]);
+    }
 
-    printf("%i\n", atoi(argv[2]));
+    //printf("%i\n", atoi(argv[2]));
 
 //    errno = 0;
 //    char *rest;
