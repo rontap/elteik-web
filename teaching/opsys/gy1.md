@@ -46,7 +46,7 @@ OS/X-en pedig:
 ## Óra Outline
 
 
-- [ ] Katalógus
+- [ ] Katalógus, beadandó
 - [ ] Új headerek `rand.c` srand!
 - [ ] `fork.c`, Fork bomb, recursive fork
 - [ ] `random`
