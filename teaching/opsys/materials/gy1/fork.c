@@ -3,13 +3,20 @@
 int main() {
     int status;
     int notacommonvalue = 1;
-    printf("The value is %i before forking \n", notacommonvalue);
+//        printf("The value is %i before forking \n", notacommonvalue);
 
+//    for (int i = 0; i < 10; i++) {
+//        fork();
+//    }
+    printf("fork!\n");
     pid_t child = fork(); //forks make a copy of variables
     if (child < 0) {
         perror("The fork calling was not succesful\n");
         exit(1);
     }
+
+    printf("both\n");
+
     if (child > 0) //the parent process, it can see the returning value of fork - the child variable!
     {
         waitpid(child, &status, 0);

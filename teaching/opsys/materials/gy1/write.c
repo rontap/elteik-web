@@ -12,18 +12,11 @@
 int main(int argc, char **argv)
 //char** means an array of character arrays = array of strings
 {
-    int i;
-    for (i = 0; i < atoi(argv[2]); i++) {
+    long int i;
+    char *rest;
+    long int res = strtol(argv[2], &rest, 10);
+    for (i = 0; i < res; i++) {
         printf("%s\n", argv[1]);
     }
-
-    //printf("%i\n", atoi(argv[2]));
-
-//    errno = 0;
-//    char *rest;
-//    long int res = strtol(argv[2], &rest, 10);
-//    printf("%li\nrest:[%s]\n", res, rest);
-//    printf("%i\n", errno);
-    // 0 0a 555a 9999999999
     return 0;
 }

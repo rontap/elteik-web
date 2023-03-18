@@ -18,18 +18,18 @@
 
 // C Util függvények
 
-//#define atoi DO_NOT_USE
+//#define atoi DO_NOT_USE // use strtol instead
 //#define usleep DO_NOT_USE
 //#define sleep DO_NOT_USE
 
 
-//int sleep_ms(long milliseconds) {
-//    struct timespec rem;
-//    struct timespec req = {
-//            (int) (milliseconds / 1000),
-//            (milliseconds % 1000) * 1000000
-//    };
-//    return nanosleep(&req, &rem);
-//}
+int sleep_ms(long milliseconds) {
+    struct timespec rem;
+    struct timespec req = {
+            (int) (milliseconds / 1000),
+            (milliseconds % 1000) * 1000000
+    };
+    return nanosleep(&req, &rem);
+}
 
 #endif //LIBOPSYS_H
