@@ -2,9 +2,8 @@
 
 ## Linkek
 
-[Canvas](https://canvas.elte.hu/courses/35103) |
-[Tárgy Honlapja](https://opsys.inf.elte.hu/) |
-[1. Beadandó learása](bead.md)
+[Canvas](https://canvas.elte.hu/courses/35103)
+[Tárgy Honlapja](https://opsys.inf.elte.hu/)
 
 ## Adatok
 
@@ -28,8 +27,8 @@ Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
 1. óra : [Környezet beállítása](prep.md) _Nincs szinkron (jelenléti vagy online) óra_
 2. óra : [Ismétlés](gy0.md) (gy0)
 3. óra : [Fork](gy1.md) (gy1)
-4. óra : File Descriptors (gy1) & Basic Signal (gy2)
-5. óra : Signal (gy2)
+4. óra : [Fork & Basic Signal](gy2.md) (gy2)
+5. óra : Signal Timer, Sigaction (gy2)
 6. óra : Pipe (gy3)
 7. óra : ???
 8. óra : Feladat megoldás (gy4)
