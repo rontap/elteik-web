@@ -1,4 +1,4 @@
-# 4. Óra / Gy1 / Fork & Signal
+# 4. Óra / Gy1 & Gy2 / Fork & Signal
 
 ## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip)
 
@@ -14,18 +14,18 @@
 ## Fileok fordítása
 
 ```shell
- gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic -o a.out ./open_fopen.c && ./a.out text.txt
+ gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic -o a.out ./signal.c && ./a.out 
 ```
 
 OS/X-en pedig:
 
 ```shell
- clang -Wall -Werror=vla -pthread -std=c11 -pedantic -o a.out ./open_fopen.c && ./a.out text.txt
+ clang -Wall -Werror=vla -pthread -std=c11 -pedantic -o a.out ./signal.c && ./a.out 
 ```
 
 ## Óra Outline
 
-- [ ] Jelenlét
+- [ ] Jelenlét, beadandó védés
 - [ ] Fcntl befejezés
 - [ ] fork (child) rajzolás
 - [ ] hogyan küldünk signaolokat `gy2 signal.c`
@@ -33,10 +33,10 @@ OS/X-en pedig:
 - [ ] Feladat megoldás `killable.c` 15 min
     - CTRL ^ c miért nem megy?
     - Stack fault (no handler!)
-- [ ] Beadandó I. Alapok
+- [ ] Beadandó I. Alapok (ha belefér)
 
 [Kezdőlap](index.md)
 |
-[Vissza](gy0.md)
+[Vissza](gy1.md)
 |
-[Tovább](gy2md)
+[Tovább](gy3.md)
