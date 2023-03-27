@@ -60,4 +60,4 @@ OS/X-en pedig:
 |
 [Vissza](gy0.md)
 |
-[Tovább](gy2md)
+[Tovább](gy2.md)

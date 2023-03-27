@@ -25,7 +25,7 @@ Például a szülő program megölése:
 
 ```c
 pid_t pid = getppid();
-kill(pid);
+kill(pid,SIGTERM);
 ```
 
 ### Signal Handler (sigacion)
