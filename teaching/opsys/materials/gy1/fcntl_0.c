@@ -28,7 +28,6 @@ int main() {
             for (i = 0; i < length1; i++) {
                 write(f, &text1[i], 1);
                 usleep(20);  //waits 20 milisec to slow down writing
-                /* todo: ms_sleep */
             }
             write(f, "\n", 1);
         }

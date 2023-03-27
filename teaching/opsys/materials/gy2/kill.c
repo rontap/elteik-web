@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
     }
 
 
-    // 2. TODO: Add check that PID is a number
+    // 2. TODO: Add check that PID and kill signal is a number
     // use function `strtol` for conversion
 
     if (false) {

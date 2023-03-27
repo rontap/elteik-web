@@ -17,14 +17,14 @@ int main() {
     pid_t child = fork();
     if (child > 0) {
         pause(); //waits till a signal arrive
-        printf("[parent]  Signal arrived\n", SIGTERM);
+        printf("[parent]  Signal arrived\n", SIGUSR1);
         int status;
         wait(&status);
         printf("[parent]  process ended\n");
     } else {
         printf("[child]   Waits 3 seconds, then send a SIGTERM %i signal\n", SIGTERM);
         sleep(3);
-        kill(getppid(), SIGUSR1);
+        kill(getppid(), SIGUSR2);
         //1. parameter the pid number of process, we send the signal
         // 		if -1, then each of the processes of the same uid get the signal
         // 		we kill our bash as well! The connection will close

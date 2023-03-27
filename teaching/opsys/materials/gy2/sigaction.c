@@ -33,6 +33,7 @@ int main() {
         sigfillset(&sigset);
         sigdelset(&sigset, SIGTERM);
         sigsuspend(&sigset);
+//        pause();
         // like pause() - except it waits only for signals not given in sigset
         //others will be blocked
         printf("[parent] The program comes back from suspending\n");
@@ -47,6 +48,7 @@ int main() {
         kill(getppid(), SIGUSR1);
         printf("[child]  Waits 3 seconds, then send a SIGTERM %i signal (it is waited for by suspend)\n", SIGTERM);
         sleep(3);
+
         kill(getppid(), SIGTERM);
         printf("[child]  process ended\n");
     }
