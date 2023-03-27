@@ -1,11 +1,15 @@
-//
-// Created by rontap on 20/03/2023.
-//
 #include "libopsys.h"
 
+
+/**
+ *
+ * @param argc
+ * @param argv
+ * @details Task: Implement wrapper for kill
+ * @return
+ */
 int main(int argc, char **argv) {
-    /**
-     * Task: Implement wrapper for kill
+    /** usage:
      * kill SIGNAL PID
      */
 
