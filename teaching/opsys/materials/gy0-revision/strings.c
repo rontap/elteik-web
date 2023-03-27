@@ -55,6 +55,6 @@ int main() {
 //    //instead of giving value character by character use function in string.h
 //    //important other functions: strcmp, strcat, strlen;
 
-//    free(str2);
+    free(str2);
     return 0;
 }
