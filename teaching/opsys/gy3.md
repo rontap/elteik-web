@@ -92,6 +92,19 @@ OS/X-en pedig:
 - [ ] `sigprocmask.c`
 - [ ] `raise` , `setitimer.c`
 
+## `Kill.c`
+Plusz feladat:
+A kill sikerességétől függetlenül
+írjuk ki egy kill.log
+file-ba az alábbi formájú sort:
+`IDŐ USER SIGNAL PID ERRNO`
+Ahol:
+- Idő: unix system time, vagy hasonló
+- User: user name aki a parancsot kiadta
+- Signal: signal amit a user megadott
+- Pid: pid amit a user megadott
+- Errno: A fork-olás errno-ja, 0 ha sikeres.
+
 [Kezdőlap](index.md)
 |
 [Vissza](gy1.md)
