@@ -21,14 +21,13 @@ Gyakorlatvezető, Beadandók javítása: Tatai __Áron__ Péter ( g07zoe@inf.elt
 
 ## Órák
 
-*Ez egy tervezet, még nem végleges.*
-Az egyes órák anyagát a linkre kattintva lehet majd megnézni.
+Az egyes órák anyagát a linkre kattintva lehet  megnézni.
 
 1. óra : [Környezet beállítása](prep.md) _Nincs szinkron (jelenléti vagy online) óra_
 2. óra : [Ismétlés](gy0.md) (gy0)
 3. óra : [Fork](gy1.md) (gy1)
 4. óra : [Fork & Basic Signal](gy2.md) (gy2)
-5. óra : Signal Timer, Sigaction (gy2)
+5. óra : [Feladatmegoldás, Signal Timer, Sigaction](gy3.md) (gy2)
 6. óra : Pipe (gy3)
 7. óra : Pipe 2 (gy3)
 8. óra : Feladat megoldás (gy4)

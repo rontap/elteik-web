@@ -1,4 +1,4 @@
-# 4. Óra / Gy02 / Signal
+# 5. Óra / Gy02 / Signal
 
 ## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip)
 
@@ -7,7 +7,7 @@
 ---
 [Kezdőlap](index.md)
 |
-[Vissza](gy2.md)
+[Vissza](gy2.md)[libopsys.h](materials%2Fgy1%2Flibopsys.h)
 |
 [Tovább](gy4.md)
 
