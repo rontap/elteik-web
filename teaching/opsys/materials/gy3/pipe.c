@@ -10,12 +10,14 @@
 int main(int argc, char *argv[]) {
     int pipefd[2]; // unnamed pipe file descriptor array
     pid_t pid;
+//    printf("%i %i\n", pipefd[0], pipefd[1]);
     char sz[100];  // char array for reading from pipe
 
     if (pipe(pipefd) == -1) {
         perror("Hiba a pipe nyitaskor!");
         exit(EXIT_FAILURE);
     }
+//    printf("%i %i\n", pipefd[0], pipefd[1]);
     pid = fork();    // creating parent-child processes
     if (pid == -1) {
         perror("Fork hiba");
