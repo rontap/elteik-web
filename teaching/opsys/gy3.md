@@ -90,7 +90,7 @@ OS/X-en pedig:
     2. Feladatmegoldás folytatása
 - [ ] 15 min közös átbeszélése a feladatnak
 - [ ] `sigprocmask.c`
-- [ ] `raise` , `setitimer.c`
+- [ ] [sigaction_value.c](materials%2Fgy2%2Fsigaction_value.c)`raise` , `setitimer.c`
 
 ## `Kill.c`
 Plusz feladat:
