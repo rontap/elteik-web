@@ -26,12 +26,6 @@ pid_t pid = getppid();
 kill(pid,SIGTERM);
 ```
 
-### Ezen az órán
-
-- Órai feladat befejezése
-- Még egy maskolási lehetőség
-- Adat küldése signallal
-
 ## Fileok fordítása
 
 ```shell
