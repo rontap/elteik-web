@@ -1,8 +1,8 @@
 # 6. Óra / Gy02 / Gy03 / Timer & Pipe
 
-## [Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip)
+## [Új Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
 
-[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip)
+[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
 
 ---
 [Kezdőlap](index.md)

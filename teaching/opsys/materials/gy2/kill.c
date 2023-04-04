@@ -1,6 +1,5 @@
 #include "libopsys.h"
 
-
 /**
  *
  * @param argc
@@ -14,19 +13,31 @@ int main(int argc, char **argv) {
      */
 
     // 1. TODO: Add check that there are 2 arguments
+    if (argc != 3) {
+        printf("To use kill, add exactly two parameters.\n");
+        printf("Usage: kill SIGNAL PID\n");
+        exit(1);
+    }
 
     if (false) {
         // 1b* TODO: extra task, optional
         // If there are no arguments, ask for a SIGNAL and PID from stdin
-
-        printf("To use kill, add exactly two parameters.\n");
-        printf("Usage: kill SIGNAL PID");
-        exit(1);
     }
 
 
     // 2. TODO: Add check that PID and kill signal is a number
-    // use function `strtol` for conversion
+
+
+    char *pid_overflow;
+    char *signal_overflow;
+    errno = 0;
+
+    long int signal = strtol(argv[1], &signal_overflow, 10);
+    long int pid = strtol(argv[2], &pid_overflow, 10);
+
+    if (errno != 0 || *signal_overflow != '\0' || *pid_overflow != '\0') {
+        printf("Errno error");
+    }
 
     if (false) {
         printf("PID parameter should be a number.\n");
@@ -34,9 +45,7 @@ int main(int argc, char **argv) {
     }
 
     errno = 0;
-
-    // 3. TODO: send actual signal
-
+    kill(pid, signal);
 
     // 4. TODO: if signal returns with -1, that means there was an error
 
