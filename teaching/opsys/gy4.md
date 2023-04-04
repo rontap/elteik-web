@@ -2,7 +2,7 @@
 
 ## [Új Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
 
-[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
+[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
 
 ---
 [Kezdőlap](index.md)
@@ -15,16 +15,6 @@
 
 `Signal` = Jel egy processből a másikba.  
 Fontosabb signalok: `SIGKILL, SIGSEGV, SIGIO, SIGTERM, SIGINT`. Ezek igazából számok, Signalok 1..32 között.
-
-### Signal Küldés
-
-PID = Process ID, a proessz egyedi azonosítója
-Például a szülő program megölése:
-
-```c
-pid_t pid = getppid();
-kill(pid,SIGTERM);
-```
 
 ## Fileok fordítása
 
