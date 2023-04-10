@@ -10,7 +10,6 @@ void handler(int signumber) {
 }
 
 int main() {
-
     sigset_t sigset;
     sigemptyset(&sigset); //empty signal set
     sigaddset(&sigset, SIGTERM); //SIGTERM is in set

@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     sprintf(pipename, "/tmp/%d", getpid());
     int fid = mkfifo(pipename, S_IRUSR | S_IWUSR); // creating named pipe file
     // S_IWGRP, S_IROTH (other jog), file permission mode
-    // the file name: fifo.ftc
+
     // the real fifo.ftc permission is: mode & ~umask 
     if (fid == -1) {
         printf("Error number: %i", errno);
@@ -30,21 +30,20 @@ int main(int argc, char *argv[]) {
     if (pid > 0)   //parent
     {
         char s[1024] = "Semmi";
-        printf("Csonyitas eredmenye szuloben: %d!\n", fid);
+        printf("[parent] Csonyitas eredmenye szuloben: %d!\n", fid);
         fd = open(pipename, O_RDONLY);
         read(fd, s, sizeof(s));
-        printf("Ezt olvastam a csobol: %s \n", s);
+        printf("[parent] Ezt olvastam a csobol: %s \n", s);
         close(fd);
-        // remove fifo.ftc
         unlink(pipename);
     } else // child
     {
-        printf("Gyerek vagyok, irok a csobe!\n");
-        printf("Csonyitas eredmenye: %d!\n", fid);
+        printf("[child] Gyerek vagyok, irok a csobe!\n");
+        printf("[child] Csonyitas eredmenye: %d!\n", fid);
         fd = open(pipename, O_WRONLY);
         write(fd, "Hajra Fradi!\n", 12);
         close(fd);
-        printf("Gyerek vagyok, beirtam, vegeztem!\n");
+        printf("[child] Gyerek vagyok, beirtam, vegeztem!\n");
     }
 
     return 0;

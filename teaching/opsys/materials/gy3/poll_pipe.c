@@ -44,15 +44,7 @@ int main() {
         printf("The timer was ticked\n");
     } else {
         if (result > 0) {
-            if (poll_fds[0].revents & POLLOUT) // ide nem jut a vezerles
-            {
-                printf("Data may be written to the pipe!\n");
-                write(f, "Fradi!", 6);
-                printf("Now we can read from the pipe \n");
-                char v[10];
-                read(f, v, 8);
-                printf("The data is %s\n", v);
-            }
+            printf("???");
         } else
             printf("Error number: %i\n", errno);
     }
@@ -61,25 +53,32 @@ int main() {
     printf("Second part!\n");
     poll_fds[0].events = POLLIN;
     pid_t child = fork();
-    if (child > 0) { //parent process
+    if (child > 0) {
+        // PARENT ===================================
+        // parent process
+        // PARENT ===================================
         printf("Parent waites for a while...\n");
         sleep(3);
         printf("Parent writes a number to the pipes!\n");
         int i = rand() % 100, status;
         write(f, &i, sizeof(i)); //writes to the pipe
         wait(&status);   //waits for the child
-    } else { // child process
-        printf("Child poll is started!\n");
-        int result = poll(poll_fds, 1, 8000); //
+    } else {
+        // CHILD ===================================
+        // child process
+        // CHILD ===================================
+        printf("[child] poll is started!\n");
+        int result = poll(poll_fds, 1, 8000);
+        printf("[child] poll is received!\n");
         if (result > 0) {
-            printf("The poll revents field is: %i\n", poll_fds[0].revents);
+            printf("[child] The poll revents field is: %i\n", poll_fds[0].revents);
             if (poll_fds[0].revents & POLLIN) // POLLIN event occured
             {
-                printf("Now we can read from the pipe \n");
+                printf("[child] Now we can read from the pipe \n");
                 int data;
                 char cdata;
-                read(f, &cdata, sizeof(cdata));
-                printf("The data is: %c\n", cdata);
+                read(f, &data, sizeof(data));
+                printf("[child] The data is: %i\n", data);
             }
         } else {
             printf("Returned poll: %i", result);

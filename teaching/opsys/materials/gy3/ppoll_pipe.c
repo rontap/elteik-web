@@ -13,7 +13,7 @@
 
 
 void handler(int sig) {
-    printf("Handler signal no. is: %i\n", sig);
+    printf("[child] [handler] signal no. is: %i\n", sig);
 }
 
 int main() {
@@ -33,17 +33,17 @@ int main() {
     printf("Second part!\n");
     pid_t child = fork();
     if (child > 0) { //parent process
-        printf("Parent waites for a while...\n");
+        printf("[parent] waites for a while...\n");
         sleep(3);
-        printf("Parent sends a SIGUSR1 signal to the child!\n");
-        kill(child, SIGUSR1);
-        // int i=rand()%100,status;
-        // write(f,&i,sizeof(i)); //writes to the pipe
-        printf("Parant waits for child end!\n");
+        printf("[parent] sends a SIGUSR1 signal to the child!\n");
+//        kill(child, SIGUSR1);
+        int i = rand() % 100, status;
+        write(f, &i, sizeof(i)); //writes to the pipe
+        printf("[parent] waits for child end!\n");
         wait(NULL);   //waits for the child
-        printf("Parent was finished too!\n");
+        printf("[parent] was finished too!\n");
     } else { // child process
-        printf("Child ppoll is started!\n");
+        printf("[child] ppoll is started!\n");
         signal(SIGUSR1, handler);
         struct timespec delay;
         delay.tv_sec = 20;  // 20 seconds delay
@@ -56,18 +56,18 @@ int main() {
         // if sigmask is NULL, no practical differences between poll-ppoll
         int result = ppoll(poll_fds, 1, &delay, &sigmask); //
         if (result > 0) {
-            printf("The ppoll revents field is: %i\n", poll_fds[0].revents);
-            if (poll_fds[0].revents & POLLOUT) // POLLIN event occured
+            printf("[child] The ppoll revents field is: %i\n", poll_fds[0].revents);
+            if (poll_fds[0].revents & POLLIN) // POLLIN event occured
             {
-                printf("Now we can read from the pipe \n");
+                printf("[child] Now we can read from the pipe \n");
                 int data;
                 char cdata;
                 read(f, &cdata, sizeof(cdata));
-                printf("The data is: %c\n", cdata);
+                printf("[child] The data is: %c\n", cdata);
             }
         } else {
-            printf("The returned ppoll result is: %i\n", result);
-            printf("Child process is over!\n");
+            printf("[child] The returned ppoll result is: %i\n", result);
+            printf("[child] Child process is over!\n");
         }
     }
     unlink("/tmp/fradi_cso");

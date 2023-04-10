@@ -111,6 +111,7 @@ int main() {
         s_value_ptr.sival_ptr = &zoli;  //the struct data must define in commmon code
         //so &adam instead &zoli is a bad solution
         sigqueue(getppid(), SIGTERM, s_value_ptr);
+
         printf("Child process ended\n");
     }
     return 0;
