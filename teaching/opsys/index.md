@@ -30,11 +30,11 @@ Az egyes órák anyagát a linkre kattintva lehet megnézni.
 4. óra : [Fork & Basic Signal](gy2.md) (gy2)
 5. óra : [Feladatmegoldás, Signal Timer, Sigaction](gy3.md) (gy2)
 6. óra : [Signal Timer, Pipe](gy4.md) (gy2 & gy3)
-7. óra : Pipe, FIFO (gy3)
+7. óra : [Pipe, FIFO](gy5.md) (gy3)
 8. óra : Multiple Pipes, Feladat megoldás (gy3 & gy4)
 9. óra : Message Queue (gy5)
-10. óra : Shared Memory (gy5) _Rákövetkező héten Elméleti ZH_
-11. óra : Shm + Semaphore (gy6) _Rákövetkező héten Gyakorlati ZH_
+10. óra : Shared Memory (gy5) _???Rákövetkező héten Elméleti ZH_
+11. óra : Shm + Semaphore (gy6) _???Rákövetkező héten Gyakorlati ZH_
 12. óra : ??
 13. óra : Konzultáció, Pótzh kérdések _Nem kötelező_
 
