@@ -2,7 +2,7 @@
 
 ## Linkek
 
-[Canvas](https://canvas.elte.hu/courses/35103)  
+[Canvas](https://canvas.elte.hu/courses/35103)
 
 [Tárgy Honlapja](https://opsys.inf.elte.hu/)
 
@@ -31,12 +31,12 @@ Az egyes órák anyagát a linkre kattintva lehet megnézni.
 5. óra : [Feladatmegoldás, Signal Timer, Sigaction](gy3.md) (gy2)
 6. óra : [Signal Timer, Pipe](gy4.md) (gy2 & gy3)
 7. óra : [Pipe, FIFO](gy5.md) (gy3)
-8. óra : Multiple Pipes, Feladat megoldás (gy3 & gy4)
-9. óra : Message Queue (gy5)
-10. óra : Shared Memory (gy5) _???Rákövetkező héten Elméleti ZH_
-11. óra : Shm + Semaphore (gy6) _???Rákövetkező héten Gyakorlati ZH_
-12. óra : ??
-13. óra : Konzultáció, Pótzh kérdések _Nem kötelező_
+8. óra : [System V Message Queue & POSIX Message Queue](gy6.md) (gy5)
+9. óra : POSIX Message Queue & Ismétlés(gy5)
+10. óra : Shared Memory (gy5) _!! Rákövetkező héten hétfőn Elméleti ZH_
+11. óra : Shared Memory + Semaphore (gy6) _!! Rákövetkező héten hétfőn Gyakorlati ZH_
+12. óra : Konzultáció, ZH átnézés, lezárás
+13. óra : Elmarad.
 
 ## Letöltések
 
@@ -62,10 +62,29 @@ Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/mater
 - A beadandóra jegyet nem kapsz.
 - A védés nagyjából 10 percig tart.
 
+
+- A második beadandó még nincs kiírva.
+
 ### 2 db ZH.
 
 1. Évolyam ZH elméleti, az előadás idejében, 90 perc. Várhatóan canvas kvíz formájában.
 2. Gyakorlat ZH kódolós, az előadás idejében, 90 perc. Várhatóan online.
+
+## ZH Időpontok
+
+Az első elméleti dolgozat ideje: 2023 május 8, 16 óra (Nappali BSC).   
+A dolgozatot Canvas rendszerben kapott elméleti kérdéssor megválaszolásával lehet teljesíteni .  
+Az elméleti dolgozat(kvíz) 20 kérdésből áll, aminek megválaszolására 20 perc áll rendelkezésre.
+10 helyes választól sikeres a ZH.
+
+A második, gyakorlati dolgozat ideje: 2023 május 15. 16 óra (Nappali BSC)
+Tanár
+A dolgozat 90 perces.  
+A gyakorlati zárthelyi feladatát a feladatok között lehet majd olvasni, és fájlfeltöltéssel a megoldást feltölteni.
+
+PótZH tervezett időpont:  
+Elméleti PótZH időpont: 2023 május 22 . 16 óra. Helyszín: Canvas
+Gyakorlati PótZH időpont: 2023 május 25. 17.45 óra .
 
 ### Értékelés
 

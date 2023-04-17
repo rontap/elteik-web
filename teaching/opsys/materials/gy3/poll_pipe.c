@@ -40,7 +40,7 @@ int main() {
     //descriptors according poll_fds.events
     //at the end of a file, we can read - so it gives back control : (
 
-    if (result == 0) {        // timer ellapsed
+    if (result == 0) {        // timer elapsed
         printf("The timer was ticked\n");
     } else {
         if (result > 0) {
