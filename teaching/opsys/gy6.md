@@ -34,6 +34,7 @@ OS/X-en pedig:
 - [ ] System V message queues kód nézés
 - [ ] POSIX MQ
 - [ ] Miért van mindig két impl?
+- [ ] close 1× vs unlink
 
 
 
