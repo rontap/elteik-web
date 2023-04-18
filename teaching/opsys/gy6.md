@@ -1,8 +1,8 @@
 # 7. Óra / Gy05 / Message Queue
 
-## [Új Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy5/gy05.zip)
+## [Új Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy4/gy04.zip)
 
-[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy5/gy05.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy5/gy05.zip)
+[https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy4/gy04.zip](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy4/gy04.zip)
 
 ---
 [Kezdőlap](index.md)
