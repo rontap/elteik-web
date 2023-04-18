@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
     mqd_t mqdes1, mqdes2;
     pid_t pid, cpid;
     int status;
-//memset(&attr, 0, sizeof( attr));
+    //memset(&attr, 0, sizeof( attr));
     attr.mq_maxmsg = MAXMSGS; // < /proc/sys/fs/mqueue/msg_max
     attr.mq_msgsize = MSGSIZE;// < /proc/sys/fs/mqueue/msgsize_max
     mq_unlink(mqname);  // remove if exists
@@ -85,7 +85,8 @@ int main(int argc, char **argv) {
         while (code != SI_MESGQ) // waiting for the handler, code is set
             sleep(1);    // in the handler
         printf("Parent:\t\t\tHandler is OK!\n");
-        mq_receive(mqdes1, rcv_buf, MSGSIZE, 0);
+        mq_receive(
+                mqdes1, rcv_buf, MSGSIZE, 0);
         printf("Parent:\t\t\tQueue transition occured - received: %s\n", rcv_buf);
     }
     printf("Parent:\t\tsi_code=%d\n", code);

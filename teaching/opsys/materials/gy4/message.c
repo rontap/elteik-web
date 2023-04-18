@@ -24,7 +24,11 @@ int sysv_mq_send(int sysv_mq) {
     };
     int status;
 
-    status = msgsnd(sysv_mq, &uz, sizeof(struct message) - sizeof(long), 0);
+    status = msgsnd(
+            sysv_mq,
+            &uz,
+            sizeof(struct message) - sizeof(long),
+            0);
     // a 4. parameter gyakran IPC_NOWAIT, ez a 0-val azonos
     if (status < 0)
         perror("msgsnd");
@@ -41,12 +45,19 @@ int sysv_mq_receive(int sysv_mq) {
     // ha <0, akkor absz. minimum érték
     // vesszuk ki a sorbol
     // MSG_COPY, IPC_NOWAIT, MSG_NOERROR
-    status = msgrcv(sysv_mq, &uz, sizeof(struct message) - sizeof(long), 5, 0);
+    status = msgrcv(
+            sysv_mq,
+            &uz,
+            sizeof(struct message) - sizeof(long),
+            5,
+            0);
 
     if (status < 0) {
         perror("msgsnd");
     } else {
-        printf("A kapott message kodja: %ld, szovege:  %s; \nrandom szama: %i\n", uz.mtype, uz.mtext, uz.num);
+        printf("A kapott message kodja: %ld, "
+               "szovege:  %s; \nrandom "
+               "szama: %i\n", uz.mtype, uz.mtext, uz.num);
     }
 
     return 0;
@@ -79,6 +90,10 @@ int main(int argc, char *argv[]) {
         // parent process
         // PARENT ===================================
         sysv_mq_send(sysv_mq);
+        sysv_mq_send(sysv_mq);
+        sysv_mq_send(sysv_mq);
+        sysv_mq_send(sysv_mq);
+        sysv_mq_send(sysv_mq);
         // todo: multiple sys messages
         wait(NULL);
         // After terminating child process, the message queue is deleted.
@@ -93,6 +108,10 @@ int main(int argc, char *argv[]) {
         // CHILD ===================================
         // child process
         // CHILD ===================================
+        sysv_mq_receive(sysv_mq);
+        sysv_mq_receive(sysv_mq);
+        sysv_mq_receive(sysv_mq);
+        sysv_mq_receive(sysv_mq);
         sysv_mq_receive(sysv_mq);
 
         return 0;
