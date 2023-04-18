@@ -21,16 +21,17 @@ int main() {
     f = open("namedpipe", O_RDWR);
     struct pollfd poll_fds[5]; // poll file descriptor array
     poll_fds[0].fd = f;    // file decriptor
-    poll_fds[0].events = POLLIN;//|POLLOUT; //watch for  reading, writing
+    poll_fds[0].events = POLLIN | POLLOUT;//|POLLOUT; //watch for  reading, writing
     //------------------------------------------------------
     //pipe is empty - no read -  timer will tick, POLLOUT -no timer tick
     //------------------------------------------------------
-    int result = poll(poll_fds, 1, 1000); //
-    //1. parameter - poll_fds, the wathing file descriptors
+
+    int result = poll(poll_fds, 1, 1000);
+    // 1. parameter - poll_fds, the wathing file descriptors
     // int poll_fds.fd file descriptor, short poll_fds.events the watched events
     // short poll_fds-revents returnd occured events
-    //2. parameter - nfds_t type, number of wathing file descriptors
-    //3. parameter - time in milliseconds, if this parameter is negative,
+    // 2. parameter - nfds_t type, number of wathing file descriptors
+    // 3. parameter - time in milliseconds, if this parameter is negative,
     // it means an infinite timeout
     //result > 0 POLLIN event occured
     //result = 0 means, that timer worked
@@ -69,7 +70,7 @@ int main() {
         // CHILD ===================================
         printf("[child] poll is started!\n");
         int result = poll(poll_fds, 1, 8000);
-        printf("[child] poll is received!\n");
+        printf("[child] poll is received!%i\n", result);
         if (result > 0) {
             printf("[child] The poll revents field is: %i\n", poll_fds[0].revents);
             if (poll_fds[0].revents & POLLIN) // POLLIN event occured

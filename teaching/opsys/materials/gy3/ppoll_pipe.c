@@ -36,9 +36,9 @@ int main() {
         printf("[parent] waites for a while...\n");
         sleep(3);
         printf("[parent] sends a SIGUSR1 signal to the child!\n");
-//        kill(child, SIGUSR1);
-        int i = rand() % 100, status;
-        write(f, &i, sizeof(i)); //writes to the pipe
+        kill(child, SIGUSR1);
+//        int i = rand() % 100, status;
+//        write(f, &i, sizeof(i)); //writes to the pipe
         printf("[parent] waits for child end!\n");
         wait(NULL);   //waits for the child
         printf("[parent] was finished too!\n");
