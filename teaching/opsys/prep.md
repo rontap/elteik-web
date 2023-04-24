@@ -82,7 +82,7 @@ int main() {
 És fordítsátok le (és futtassátok) az alábbi paranccsal:
 
 ```shell
- gcc -Wall -Werror=vla -pthread -lrt -std=c11 -pedantic ./test.c  && ./a.out 
+ gcc -Wall -Werror=vla -pthread  -std=c11 -pedantic ./test.c -lrt && ./a.out 
 ```
 
 OS/X-en pedig:

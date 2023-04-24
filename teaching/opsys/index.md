@@ -31,12 +31,12 @@ Az egyes órák anyagát a linkre kattintva lehet megnézni.
 5. óra : [Feladatmegoldás, Signal Timer, Sigaction](gy3.md) (gy2)
 6. óra : [Signal Timer, Pipe](gy4.md) (gy2 & gy3)
 7. óra : [Pipe, FIFO](gy5.md) (gy3)
-8. óra : [System V Message Queue & POSIX Message Queue](gy6.md) (gy5)
-9. óra : POSIX Message Queue & Ismétlés(gy5)
-10. óra : Shared Memory (gy5) _!! Rákövetkező héten hétfőn Elméleti ZH_
+8. óra : [System V Message Queue & POSIX Message Queue](gy6.md) (gy4)
+9. óra : [Ismétlés](gy7.md) - nincs új gyakorlati file
+10. óra : Shared Memory + Semaphore (gy5) _!! Rákövetkező héten hétfőn Elméleti ZH_
 11. óra : Shared Memory + Semaphore (gy6) _!! Rákövetkező héten hétfőn Gyakorlati ZH_
 12. óra : Konzultáció, ZH átnézés, lezárás
-13. óra : Elmarad.
+13. óra : Beadandó Bemutatás
 
 ## Letöltések
 
@@ -49,12 +49,14 @@ Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/mater
 
 3 [Gy3](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
 
+4 [Gy3](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy4/gy04.zip)
+
 ## Számonkérés & Követelmények
 
 ### 2 db beadandó.
 
 - [Az első beadandó](bead.md) az első pár óra anyagából.
-- Az második beadandó az első beadandó továbbfejlesztve.   
+- [A második beadandó](bead.md)  az első beadandó továbbfejlesztve.   
   A működő és helyes beadandók kellenek a tárgy teljesítéséhez.  
   A beadandót beadás után majd meg kell védeni online,  
   ahol egyszerű elméleti kérdések is fel lesznek téve a
@@ -62,13 +64,10 @@ Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/mater
 - A beadandóra jegyet nem kapsz.
 - A védés nagyjából 10 percig tart.
 
-
-- A második beadandó még nincs kiírva.
-
 ### 2 db ZH.
 
-1. Évolyam ZH elméleti, az előadás idejében, 90 perc. Várhatóan canvas kvíz formájában.
-2. Gyakorlat ZH kódolós, az előadás idejében, 90 perc. Várhatóan online.
+1. Évolyam ZH elméleti, az előadás idejében, 90 perc. Canvas kvíz formájában.
+2. Gyakorlat ZH kódolós, az előadás idejében, 90 perc. Online.
 
 ## ZH Időpontok
 

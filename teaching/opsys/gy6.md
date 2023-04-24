@@ -11,9 +11,7 @@
 |
 [Tovább](gy7.md)
 
-## Előző részek tartalmából
 
-pipe
 
 ## Fileok fordítása
 
