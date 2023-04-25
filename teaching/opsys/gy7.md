@@ -17,6 +17,8 @@
 
 Az eléréséhez inf-es felhasználó kell
 
+
+## [API Összefoglaló PDF](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/OPSYS_summary_p1.pdf)
 ---
 [Kezdőlap](index.md)
 |
