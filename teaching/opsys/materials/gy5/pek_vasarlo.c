@@ -19,7 +19,6 @@ int *s;
 sem_t *szabad;
 sem_t *ures;
 sem_t *tele;
-
 //
 sem_t *szemafor_letrehozas(char *nev, int szemafor_ertek) {
     sem_t *semid = sem_open(nev, O_CREAT, S_IRUSR | S_IWUSR, szemafor_ertek);

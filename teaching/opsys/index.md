@@ -33,7 +33,7 @@ Az egyes órák anyagát a linkre kattintva lehet megnézni.
 7. óra : [Pipe, FIFO](gy5.md) (gy3)
 8. óra : [System V Message Queue & POSIX Message Queue](gy6.md) (gy4)
 9. óra : [Ismétlés](gy7.md) - nincs új gyakorlati file
-10. óra : Shared Memory + Semaphore (gy5) _!! Rákövetkező héten hétfőn Elméleti ZH_
+10. óra : [Shared Memory + Semaphore (gy5)](gy8.md) _!! Rákövetkező héten hétfőn Elméleti ZH_
 11. óra : Shared Memory + Semaphore (gy6) _!! Rákövetkező héten hétfőn Gyakorlati ZH_
 12. óra : Konzultáció, ZH átnézés, lezárás
 13. óra : Beadandó Bemutatás
