@@ -2,6 +2,7 @@
 
 
 
+## [Új Fileok letöltése](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy5/gy05.zip)
 
 ## Óra Outline
 
