@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
         sleep(4);            // child waits during sleep
         strcpy(s, buffer);
         printf("Szulo, szemafor up!\n");
-        szemafor_muvelet(semid, 1); // Up
+        szemafor_muvelet(semid, 1); // U
         shmdt(s);    // release shared memory
         wait(NULL);
         szemafor_torles(semid);
