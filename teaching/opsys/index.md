@@ -34,7 +34,7 @@ Az egyes órák anyagát a linkre kattintva lehet megnézni.
 8. óra : [System V Message Queue & POSIX Message Queue](gy6.md) (gy4)
 9. óra : [Ismétlés](gy7.md) - nincs új gyakorlati file
 10. óra : [Shared Memory + Semaphore (gy5)](gy8.md) _!! Rákövetkező héten hétfőn Elméleti ZH_
-11. óra : Shared Memory + Semaphore (gy6) _!! Rákövetkező héten hétfőn Gyakorlati ZH_
+11. óra : [Shared Memory + Semaphore (gy6)](gy9.md) _!! Rákövetkező héten hétfőn Gyakorlati ZH_
 12. óra : Konzultáció, ZH átnézés, lezárás
 13. óra : Beadandó Bemutatás
 
@@ -45,11 +45,19 @@ Anyaga: [Gy0](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/mater
 
 1 Fork [Gy1](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy1/gy1-opsys.zip)
 
-2 // TODO
+2 Kill, Signal etc [Gy2](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy2/gy02.zip)
 
 3 [Gy3](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy3/gy03.zip)
 
 4 [Gy3](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy4/gy04.zip)
+
+5 [Shared Memory](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy5/gy05.zip)
+
+6 [Szemafor Memory](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/gy6/gy06.zip)
+
+[API Összefoglaló PDF](https://github.com/rontap/elteik-web/raw/main/teaching/opsys/materials/OPSYS_summary_p1.pdf)
+
+Órai felvételek: Teams - fileok
 
 ## Számonkérés & Követelmények
 
