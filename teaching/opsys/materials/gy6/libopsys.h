@@ -21,14 +21,15 @@
 
 #include <sys/shm.h>
 
+#include <stdbool.h>
+#include <semaphore.h>
+#include <sys/sem.h>
+
 #ifndef LIBOPSYS_H
 #define LIBOPSYS_H
 
 
-
 #define atoi DO_NOT_USE
-
-
 
 
 #endif //LIBOPSYS_H

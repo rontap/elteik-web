@@ -2,9 +2,7 @@
 // Created by rontap on 01/05/2023.
 //
 #include "libopsys.h"
-#include <stdbool.h>
-#include <semaphore.h>
-#include <sys/sem.h>
+
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "EndlessLoop"
@@ -43,12 +41,13 @@ void modify_semaphore(int semid, int operation) {
 
 
 void get_random(char *str) {
-    int rn[4];
+    int rn[5];
     rn[0] = rand() % 100;
     rn[1] = rand() % 100;
     rn[2] = rand() % 100;
     rn[3] = rand() % 100;
-    sprintf(str, "num [%d %d %d %d]", rn[0], rn[1], rn[2], rn[3]);
+    rn[4] = rand() % 100;
+    sprintf(str, "num [%d %d %d %d %d]", rn[0], rn[1], rn[2], rn[3], rn[3]);
 }
 
 int get_shm_mem(int shm_key) {
@@ -121,11 +120,13 @@ int read_shm_mem(int shm_id) {
     char *shared_arr = shmat(shm_id, NULL, 0);
     printf("\n =>> Shared memory Contents: [%s]", shared_arr);
     shmdt(shared_arr); // ~ free(..)
+    return 0;
 }
 
 int remove_shm_mem(int shm_id) {
     printf("\n =>> Freeing up shared memory.");
     shmctl(shm_id, IPC_RMID, NULL);
+    return 0;
 }
 
 

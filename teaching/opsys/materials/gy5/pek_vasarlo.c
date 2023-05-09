@@ -16,7 +16,7 @@
 // posix semaphor requires to link: cc -lrt pek_vasarlo.c
 #define MEMSIZE 1024
 int *s;
-sem_t *szabad;
+sem_t *kritikus_zona;
 sem_t *ures;
 sem_t *tele;
 
@@ -36,10 +36,10 @@ void pek() {
     long int li;
     while (s[1]) {
         sem_wait(ures);
-        sem_wait(szabad);
+        sem_wait(kritikus_zona);
         s[0] += 1;
-        printf("Pek, a kenyerek szama: %i\n", s[0]);
-        sem_post(szabad);
+        printf("Pek,   a kenyerek szama: %i -> %i\n", s[0] - 1, s[0]);
+        sem_post(kritikus_zona);
         sem_post(tele);
         li = random();
         usleep(li % 100000);    // wait 0-100000 microsecond
@@ -51,10 +51,10 @@ void vasarlo() {
     long int li;
     while (s[1]) {
         sem_wait(tele);
-        sem_wait(szabad);
+        sem_wait(kritikus_zona);
         s[0] -= 1;
-        printf("Vasarlo, kenyerek szama: %i\n", s[0]);
-        sem_post(szabad);
+        printf("Vasarlo, kenyerek szama: %i -> %i\n", s[0] + 1, s[0]);
+        sem_post(kritikus_zona);
         sem_post(ures);
         li = random();
         usleep(li % 100000);    // wait for a while, 0-100000 microsecond
@@ -67,19 +67,21 @@ int main(int argc, char *argv[]) {
     pid_t pek_id, vasarlo_id;
     key_t kulcs;
     int sh_mem_id, N = 10;
-    char *sem_nev1 = "alma";
-    char *sem_nev2 = "korte";
-    char *sem_nev3 = "barack";
+    char *sem_nev1 = "sem_krit";
+    char *sem_nev2 = "sem_ures";
+    char *sem_nev3 = "sem_tele";
 //
     kulcs = ftok(argv[0], 1);
     sh_mem_id = shmget(kulcs, MEMSIZE, IPC_CREAT | S_IRUSR | S_IWUSR);
     s = (int *) shmat(sh_mem_id, NULL, 0);
     s[0] = 0;    // a polcon levo kenyerek szama
     s[1] = 1;    // mehet a folyamat
-    szabad = szemafor_letrehozas(sem_nev1, 1);
-    ures = szemafor_letrehozas(sem_nev2, N);    // ures a polc
-    tele = szemafor_letrehozas(sem_nev3, 0);
+
+    kritikus_zona = szemafor_letrehozas(sem_nev1, 1);
+    ures = szemafor_letrehozas(sem_nev2, N);    // 10 hely van a polcon
+    tele = szemafor_letrehozas(sem_nev3, 0);    // 0  darab van a polcon
     vasarlo_id = fork();
+    sleep(1);
     if (vasarlo_id > 0) {
         pek_id = fork();
         if (pek_id > 0) {
@@ -87,6 +89,7 @@ int main(int argc, char *argv[]) {
             printf("Szulo indul! \n");
             printf("Nyomjon le valamit!\n");
             scanf("%s", &buffer);
+
             s[1] = 0;    // gyerekek vege
             wait(NULL);
             wait(NULL);
@@ -104,12 +107,12 @@ int main(int argc, char *argv[]) {
             //		shmdt(s);
         }
     } else {    // vasarlo folyamat
-        //srandom(10);	// init random generator in vasarlo
+        srandom(10);    // init random generator in vasarlo
         srandom(time(NULL));
         printf("Vasarlo: Indul!\n");
         vasarlo();
         printf("Vasarlo befejezte\n");
-        //shmdt(s);
+//        shmdt(s);
     }
 
     return 0;
