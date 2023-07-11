@@ -1,13 +1,17 @@
 # ELTE IK BSc
 
-Stuff I had to do while doing ELTE IK
+Stuff I had to do while doing ELTE IK BSc
 
 ```javascript
 be('good') || be('ELTE')
 ```
 ## Teaching
 
-[Opszs / Operációs Rendszerek](https://rontap.github.io/elteik-web/teaching/opsys/)
+[Opsys / Operációs Rendszerek](https://rontap.github.io/elteik-web/teaching/opsys/)
+
+## Thesis 
+
+[My Thesis](https://github.com/rontap/thesis) in TypeScript. A UI node editor.
 
 ## Notes
 
@@ -88,7 +92,7 @@ AB1 Handin: see path `/adatb1/bead.sql`
 
 ## CV
 
-My personal CV can be found at TODO
+My personal CV can be requested by email
 
 
 #### All code has licence of CC-BY-SA
